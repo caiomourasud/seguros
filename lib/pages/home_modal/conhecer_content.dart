@@ -14,10 +14,6 @@ class ConhecerContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       color: Colors.transparent,
-      borderRadius: new BorderRadius.only(
-        topLeft: const Radius.circular(16.0),
-        topRight: const Radius.circular(16.0),
-      ),
       child: Stack(
         children: [
           Padding(
@@ -65,9 +61,9 @@ class ConhecerContent extends StatelessWidget {
                 ),
               ),
               Expanded(
-                child: Container(
-                  color: Theme.of(context).canvasColor,
+                child: Material(
                   child: ListView(
+                    padding: EdgeInsets.only(top: 24.0),
                     children: [
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 16.0),
@@ -149,6 +145,7 @@ class ConhecerContent extends StatelessWidget {
                           ],
                         ),
                       ),
+                      Divider(height: 64.0)
                     ],
                   ),
                 ),

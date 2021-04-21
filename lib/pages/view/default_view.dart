@@ -9,17 +9,11 @@ class DefaultView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // return Observer(builder: (_) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: CustomThemes().light,
       darkTheme: CustomThemes().dark,
       themeMode: ThemeMode.light,
-      // themeMode: _appController.autoTheme
-      //     ? ThemeMode.system
-      //     : _appController.isDarkTheme
-      //         ? ThemeMode.dark
-      //         : ThemeMode.light,
       navigatorKey: navigatorKey,
       onGenerateRoute: (RouteSettings settings) {
         return CupertinoPageRoute(
@@ -30,6 +24,5 @@ class DefaultView extends StatelessWidget {
         );
       },
     );
-    // });
   }
 }
