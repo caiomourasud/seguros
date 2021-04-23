@@ -6,9 +6,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:seguros/controllers/app_controller.dart';
-import 'package:seguros/themes/custom_themes.dart';
-import 'package:seguros/utils/connectivity_status.dart';
+
+import 'controllers/app_controller.dart';
+import 'themes/custom_themes.dart';
+import 'utils/connectivity_status.dart';
 
 final _appController = Modular.get<AppController>();
 

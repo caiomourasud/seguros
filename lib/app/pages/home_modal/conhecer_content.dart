@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:seguros/components/simular_buttom.dart';
-import 'package:seguros/controllers/app_controller.dart';
+import 'package:seguros/app/components/simular_buttom.dart';
+import 'package:seguros/app/controllers/app_controller.dart';
 
 import 'duvidas_content.dart';
 

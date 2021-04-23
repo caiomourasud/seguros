@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:seguros/themes/custom_themes.dart';
+import 'package:seguros/app/themes/custom_themes.dart';
 
 class DefaultView extends StatelessWidget {
   final Widget page;

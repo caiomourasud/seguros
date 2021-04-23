@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:seguros/pages/details/duvida_details_page.dart';
+import 'package:seguros/app/pages/details/duvida_details_page.dart';
 
 class DuvidaListTile extends StatelessWidget {
   final String title;
@@ -39,11 +39,10 @@ class DuvidaListTile extends StatelessWidget {
               Icon(CupertinoIcons.chevron_forward, size: 18),
             ],
           ),
-          onTap: () {
-            Navigator.push(context, CupertinoPageRoute(builder: (context) {
-              return DuvidaDetailsPage(title: title, text: text);
-            }));
-          },
+          onTap: () =>
+              Navigator.push(context, CupertinoPageRoute(builder: (context) {
+            return DuvidaDetailsPage(title: title, text: text);
+          })),
         ),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 18.0),

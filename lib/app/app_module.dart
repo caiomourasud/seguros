@@ -1,6 +1,7 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:seguros/controllers/app_controller.dart';
-import 'package:seguros/pages/home_page.dart';
+
+import 'controllers/app_controller.dart';
+import 'pages/home_page.dart';
 
 class AppModule extends Module {
   @override
