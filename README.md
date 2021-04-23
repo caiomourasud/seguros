@@ -1,16 +1,21 @@
-# seguros
+<h1 align=center> Seguros </h3>
 
-A new Flutter project.
+<p align=center>
+  I was challenged to create an app with only the <a href="https://nubank.com.br" target="_blank">Nubank</a> life insurance part and fix some UI issues.
+</p>
+</br>
 
-## Getting Started
+# Flutter
+<p>This is a <a href="https://flutter.dev/" target="_blank">Flutter</a> app, designed based on Nubank Vida.</p>
+</br>
 
-This project is a starting point for a Flutter application.
+# Screenshots
+<p>Come back later, I'm still at the very beginning of this project./p>
+</br>
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Creators
+<p>Caio Moura</p>
+- <a href="https://github.com/caiomourasud" target="_blank">https://github.com/caiomourasud</a>
+</br>
+</br>
+<p>I hope you enjoy 🤘</p>
