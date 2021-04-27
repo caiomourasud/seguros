@@ -12,8 +12,8 @@ class CustomModalBottomSheet {
           context: context,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
-              topLeft: const Radius.circular(8.0),
-              topRight: const Radius.circular(8.0),
+              topLeft: const Radius.circular(10.0),
+              topRight: const Radius.circular(10.0),
             ),
           ),
           isScrollControlled: true,

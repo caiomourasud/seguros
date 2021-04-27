@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -10,6 +8,7 @@ import 'package:seguros/app/components/custom_modal_bottom_sheet.dart';
 import 'package:seguros/app/components/searchbar_widget.dart';
 import 'package:seguros/app/controllers/app_controller.dart';
 
+import 'cobertura_page.dart';
 import 'home_modal/duvidas_content.dart';
 import 'view/default_view.dart';
 
@@ -26,7 +25,7 @@ class SimularSeguroPage extends StatefulWidget {
 }
 
 class _SimularSeguroPageState extends State<SimularSeguroPage> {
-  int _character = 0;
+  int atividade = 0;
 
   @override
   void initState() {
@@ -38,65 +37,81 @@ class _SimularSeguroPageState extends State<SimularSeguroPage> {
 
   @override
   void dispose() {
-    _focus.dispose();
-    _buscar.dispose();
-    _appController.searchText = '';
+    _appController.setSearchText('');
     super.dispose();
   }
 
   _onFocusChange() {
-    Timer(Duration(milliseconds: 100), () {
-      _appController.setFocus(_focus.hasFocus);
-    });
+    _appController.setFocus(_focus.hasFocus);
   }
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Scaffold(
-          appBar: CupertinoNavigationBar(
-              padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 8.0, 0.0),
-              backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-              leading: MouseRegion(
-                cursor: SystemMouseCursors.click,
-                child: CupertinoButton(
-                    padding: EdgeInsets.all(4.0),
-                    borderRadius: BorderRadius.circular(50.0),
-                    color: Colors.transparent,
-                    child: Icon(CupertinoIcons.chevron_back,
-                        size: 28, color: Colors.grey[600]),
-                    onPressed: () => Navigator.of(context).pop()),
-              ),
-              middle: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: LinearProgressIndicator(
-                  minHeight: 2.5,
-                  value: 0.25,
-                  backgroundColor: Colors.grey[300],
-                ),
-              ),
-              trailing: MouseRegion(
-                cursor: SystemMouseCursors.click,
-                child: CupertinoButton(
-                    padding: EdgeInsets.all(4.0),
-                    borderRadius: BorderRadius.circular(50.0),
-                    color: Colors.transparent,
-                    child: Icon(CupertinoIcons.question_circle,
-                        size: 28, color: Colors.grey[600]),
-                    onPressed: () => CustomModalBottomSheet().show(
-                        context: context,
-                        height: MediaQuery.of(context).size.height -
-                            MediaQuery.of(context).viewPadding.top,
-                        content: DefaultView(
-                            navigatorKey: modalNavigatorKey,
-                            page: DuvidasContent()))),
-              ),
-              border: Border.all(color: Colors.transparent)),
+          floatingActionButton: FloatingActionButton(
+              backgroundColor: atividade == 0 ? Colors.grey[350] : null,
+              elevation: 0.0,
+              highlightElevation: 0.0,
+              focusElevation: 0.0,
+              child: Icon(Icons.arrow_forward_rounded,
+                  color: atividade == 0 ? Colors.grey[500] : null, size: 28),
+              onPressed: atividade == 0
+                  ? null
+                  : () => Navigator.push(_appController.context!,
+                          CupertinoPageRoute(builder: (context) {
+                        return CoberturaPage(
+                            atividade:
+                                _appController.atividades[atividade - 1]);
+                      }))),
           body: CustomScrollView(
             slivers: [
-              // if (!_appController.onFocus)
+              SliverAppBar(
+                pinned: true,
+                elevation: 0.0,
+                backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+                leading: MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: CupertinoButton(
+                      padding: EdgeInsets.all(4.0),
+                      borderRadius: BorderRadius.circular(50.0),
+                      color: Colors.transparent,
+                      child: Icon(CupertinoIcons.chevron_back,
+                          size: 28, color: Colors.grey[600]),
+                      onPressed: () => Navigator.of(context).pop()),
+                ),
+                title: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: LinearProgressIndicator(
+                    minHeight: 2.5,
+                    value: 0.25,
+                    backgroundColor: Colors.grey[300],
+                  ),
+                ),
+                actions: [
+                  Padding(
+                    padding: const EdgeInsets.only(right: 8.0),
+                    child: MouseRegion(
+                      cursor: SystemMouseCursors.click,
+                      child: CupertinoButton(
+                          padding: EdgeInsets.all(4.0),
+                          borderRadius: BorderRadius.circular(50.0),
+                          color: Colors.transparent,
+                          child: Icon(CupertinoIcons.question_circle,
+                              size: 28, color: Colors.grey[600]),
+                          onPressed: () => CustomModalBottomSheet().show(
+                              context: context,
+                              height: MediaQuery.of(context).size.height -
+                                  MediaQuery.of(context).viewPadding.top,
+                              content: DefaultView(
+                                  navigatorKey: modalNavigatorKey,
+                                  page: DuvidasContent()))),
+                    ),
+                  ),
+                ],
+              ),
               SliverPadding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                padding: const EdgeInsets.symmetric(horizontal: 22.0),
                 sliver: SliverToBoxAdapter(
                   child: Observer(builder: (_) {
                     return AnimatedContainer(
@@ -111,6 +126,8 @@ class _SimularSeguroPageState extends State<SimularSeguroPage> {
                                 .textTheme
                                 .headline4
                                 ?.copyWith(
+                                    fontSize: 30,
+                                    fontWeight: FontWeight.w600,
                                     color: Theme.of(context)
                                         .colorScheme
                                         .onSurface),
@@ -124,10 +141,10 @@ class _SimularSeguroPageState extends State<SimularSeguroPage> {
                                     .textTheme
                                     .headline6
                                     ?.copyWith(
-                                        fontSize: 21,
+                                        fontSize: 20,
                                         fontWeight: FontWeight.w300)),
                           ),
-                          SizedBox(height: 22.0),
+                          SizedBox(height: 32.0),
                         ],
                       ),
                     );
@@ -147,6 +164,9 @@ class _SimularSeguroPageState extends State<SimularSeguroPage> {
                             _appController.setSearchText(value))),
               ),
               SliverToBoxAdapter(
+                child: SizedBox(height: 10.0),
+              ),
+              SliverToBoxAdapter(
                 child: Observer(builder: (_) {
                   return Column(
                     children: _appController.filterAtividades
@@ -154,10 +174,10 @@ class _SimularSeguroPageState extends State<SimularSeguroPage> {
                           (item) => AtividadeListTile(
                             value: item.value,
                             title: item.title,
-                            groupValue: _character,
+                            groupValue: atividade,
                             onChange: (value) {
                               setState(() {
-                                _character = value;
+                                atividade = value;
                               });
                             },
                           ),

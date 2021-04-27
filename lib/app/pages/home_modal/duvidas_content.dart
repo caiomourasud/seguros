@@ -20,7 +20,7 @@ class DuvidasContent extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 16.0),
             child: Container(
-              color: Theme.of(context).canvasColor,
+              color: Theme.of(context).scaffoldBackgroundColor,
               height: 52.0,
             ),
           ),
@@ -74,18 +74,8 @@ class DuvidasContent extends StatelessWidget {
                           ]))),
               Expanded(
                 child: Material(
+                  color: Theme.of(context).scaffoldBackgroundColor,
                   child: ListView(padding: EdgeInsets.zero, children: [
-                    //Padding(
-                    //  padding: EdgeInsets.symmetric(horizontal: 18.0),
-                    //  child: Text('Dúvidas comuns sobre seguro de vida',
-                    //      style: Theme.of(context)
-                    //          .textTheme
-                    //          .headline6
-                    //          ?.copyWith(fontSize: 32)),
-                    //),
-                    //SizedBox(
-                    //  height: 32.0,
-                    //),
                     DuvidaListTile(
                         title: 'O que Nubank Vida?',
                         text:

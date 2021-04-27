@@ -17,7 +17,7 @@ class DuvidaDetailsPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 16.0),
             child: Container(
-              color: Theme.of(context).canvasColor,
+              color: Theme.of(context).scaffoldBackgroundColor,
               height: 52.0,
             ),
           ),
@@ -60,6 +60,7 @@ class DuvidaDetailsPage extends StatelessWidget {
               ),
               Expanded(
                 child: Material(
+                  color: Theme.of(context).scaffoldBackgroundColor,
                   child: ListView(
                     padding: EdgeInsets.only(top: 24.0),
                     children: [

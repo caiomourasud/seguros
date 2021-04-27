@@ -6,7 +6,9 @@ class CustomThemes {
       brightness: Brightness.light,
       accentColor: Colors.purple[800],
       splashColor: Colors.transparent,
-      scaffoldBackgroundColor: CupertinoColors.extraLightBackgroundGray,
+      scaffoldBackgroundColor: CupertinoColors.white,
+      bottomSheetTheme:
+          BottomSheetThemeData(backgroundColor: CupertinoColors.white),
       cupertinoOverrideTheme:
           CupertinoThemeData(primaryColor: Colors.purple[800]));
 

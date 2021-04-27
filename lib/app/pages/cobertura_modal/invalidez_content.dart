@@ -2,14 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:seguros/app/components/simular_buttom.dart';
 import 'package:seguros/app/controllers/app_controller.dart';
-
-import 'duvidas_content.dart';
+import 'package:seguros/app/pages/home_modal/duvidas_content.dart';
 
 final _appController = Modular.get<AppController>();
 
-class ConhecerContent extends StatelessWidget {
+class InvalidezContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -68,7 +66,7 @@ class ConhecerContent extends StatelessWidget {
                     children: [
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 16.0),
-                        child: Text('Seguro de vida do Nubank',
+                        child: Text('Invalidez total ou parcial por acidente',
                             style: Theme.of(context)
                                 .textTheme
                                 .headline6
@@ -82,7 +80,7 @@ class ConhecerContent extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('O que é seguro de vida?',
+                            Text('O que é',
                                 style: Theme.of(context)
                                     .textTheme
                                     .headline6
@@ -91,17 +89,9 @@ class ConhecerContent extends StatelessWidget {
                               height: 24.0,
                             ),
                             Text(
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
                                 "Curabitur auctor ipsum cursus risus molestie lobortis. "
-                                "Ut rutrum est sit amet velit ullamcorper dictum. "
-                                "Etiam eget malesuada elit, scelerisque sagittis velit. "
-                                "\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. "
-                                "Curabitur auctor ipsum cursus risus molestie lobortis."
-                                "\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. "
-                                "Curabitur auctor ipsum cursus risus molestie lobortis. "
-                                "Ut rutrum est sit amet velit ullamcorper dictum. "
-                                "Etiam eget malesuada elit, scelerisque sagittis velit."
-                                "Curabitur auctor ipsum. ",
+                                "Curabitur auctor ipsum cursus risus molestie lobortis. ",
                                 style: Theme.of(context)
                                     .textTheme
                                     .headline6
@@ -117,7 +107,7 @@ class ConhecerContent extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('Seguro de vida é pra mim?',
+                            Text('Como funciona',
                                 style: Theme.of(context)
                                     .textTheme
                                     .headline6
@@ -126,17 +116,36 @@ class ConhecerContent extends StatelessWidget {
                               height: 24.0,
                             ),
                             Text(
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                                "Curabitur auctor ipsum cursus risus molestie lobortis. "
-                                "Ut rutrum est sit amet velit ullamcorper dictum. "
-                                "Etiam eget malesuada elit, scelerisque sagittis velit. "
-                                "\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. "
-                                "Curabitur auctor ipsum cursus risus molestie lobortis. "
-                                "Ut rutrum est sit amet velit ullamcorper dictum."
-                                "\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. "
-                                "Curabitur auctor ipsum cursus risus molestie lobortis. "
-                                "Ut rutrum est sit amet velit ullamcorper dictum. "
-                                "Etiam eget malesuada elit, scelerisque sagittis velit.",
+                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
+                                "Curabitur auctor ipsum cursus risus molestie lobortis."
+                                "\n\nCurabitur auctor ipsum cursus risus molestie lobortis."
+                                "Ut rutrum est sit amet velit. "
+                                "\n\nCurabitur auctor ipsum cursus risus molestie lobortis."
+                                "Ut rutrum est sit amet velit ullamcorper dictum. ",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline6
+                                    ?.copyWith(
+                                        fontSize: 19,
+                                        fontWeight: FontWeight.w300)),
+                          ],
+                        ),
+                      ),
+                      Divider(height: 64.0),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Período de carência',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline6
+                                    ?.copyWith(fontSize: 19)),
+                            SizedBox(
+                              height: 24.0,
+                            ),
+                            Text("Lorem ipsum dolor sit amet elit.",
                                 style: Theme.of(context)
                                     .textTheme
                                     .headline6
@@ -150,8 +159,7 @@ class ConhecerContent extends StatelessWidget {
                     ],
                   ),
                 ),
-              ),
-              SimularButton()
+              )
             ],
           ),
         ],

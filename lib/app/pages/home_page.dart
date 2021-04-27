@@ -110,11 +110,11 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   SliverToBoxAdapter(
-                    child: SizedBox(height: 22.0),
+                    child: SizedBox(height: 48.0),
                   ),
                   SliverToBoxAdapter(
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 22.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -128,14 +128,14 @@ class _HomePageState extends State<HomePage> {
                                         .colorScheme
                                         .onSurface),
                           ),
-                          SizedBox(height: 22.0),
+                          SizedBox(height: 32.0),
                           Text(
                               'Finalmente um seguro de vida simples e acessível para você, com transparência em todas as etapas.',
                               style: Theme.of(context)
                                   .textTheme
                                   .headline6
                                   ?.copyWith(fontSize: 21)),
-                          SizedBox(height: 8.0),
+                          SizedBox(height: 16.0),
                           MouseRegion(
                             cursor: SystemMouseCursors.click,
                             child: CupertinoButton(
@@ -148,11 +148,11 @@ class _HomePageState extends State<HomePage> {
                                             .textTheme
                                             .button
                                             ?.copyWith(
-                                                fontSize: 19,
+                                                fontSize: 16,
                                                 color: Theme.of(context)
                                                     .accentColor)),
                                     SizedBox(width: 8.0),
-                                    Icon(CupertinoIcons.arrow_right)
+                                    Icon(Icons.arrow_forward_rounded, size: 22),
                                   ],
                                 ),
                                 onPressed: () => CustomModalBottomSheet().show(
@@ -176,26 +176,26 @@ class _HomePageState extends State<HomePage> {
                                         navigatorKey: modalNavigatorKey,
                                         page: ConhecerContent()))),
                           ),
-                          SizedBox(height: 32.0),
+                          SizedBox(height: 42.0),
                           HomeDescription(
                               icon: CupertinoIcons.device_phone_portrait,
                               title: 'Simples como deve ser',
                               subtitle:
                                   'Tudo feito de um jeito para que você saiba exatamente o que está contratando.'),
-                          SizedBox(height: 32.0),
+                          SizedBox(height: 42.0),
                           HomeDescription(
                               icon: CupertinoIcons.money_dollar,
                               title: 'Preço que cabe no bolso',
                               subtitle:
                                   'Preço médio inicial de R\$9 por mês, sem tarifas escondidas e sem ajustes de preço por idade durante 5 anos. Simples assim.'),
-                          SizedBox(height: 32.0),
+                          SizedBox(height: 42.0),
                           HomeDescription(
                               icon: CupertinoIcons.pencil_ellipsis_rectangle,
                               title:
                                   'Coberturas Personalizáveis e úteis para você',
                               subtitle:
                                   'Monte seu seguro com coberturas que fazem a diferença para você e para o seu momento de vida.'),
-                          SizedBox(height: 32.0),
+                          SizedBox(height: 42.0),
                           HomeDescription(
                               icon: CupertinoIcons.phone,
                               title: 'Se você precisar, estaremos aqui',
@@ -212,12 +212,12 @@ class _HomePageState extends State<HomePage> {
                       child: Container(
                     padding:
                         EdgeInsets.symmetric(horizontal: 16.0, vertical: 22.0),
-                    color: Colors.grey[300],
+                    color: Colors.grey[200],
                     child: Text(
                         'A aceitação do seguro estará sujeira à análise do risco.',
                         style: Theme.of(context).textTheme.subtitle1?.copyWith(
                             fontSize: 19,
-                            color: Colors.grey[700],
+                            color: Colors.grey[800],
                             fontWeight: FontWeight.w300)),
                   )),
                   SliverToBoxAdapter(

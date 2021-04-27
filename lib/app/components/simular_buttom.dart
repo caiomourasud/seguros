@@ -17,14 +17,11 @@ class SimularButton extends StatelessWidget {
       height: bottomSheetHeight,
       width: MediaQuery.of(context).size.width,
       margin: EdgeInsets.symmetric(vertical: bottomSheetHeight! * 0.03),
-      padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
-      child: TextButton(
-          style: TextButton.styleFrom(
-              shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(30))),
-              primary: Colors.white,
-              backgroundColor: Colors.purple[800],
-              onSurface: Colors.purple[900]),
+      padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 22.0),
+      child: CupertinoButton(
+          borderRadius: BorderRadius.all(Radius.circular(50)),
+          color: Colors.purple[800],
+          pressedOpacity: 0.8,
           child: Text('Simular meu seguro',
               style: Theme.of(context)
                   .textTheme
