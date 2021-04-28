@@ -20,7 +20,7 @@ abstract class _AppControllerBase with Store {
   bool onFocus = false;
 
   @action
-  setFocus(value) => onFocus = value;
+  setFocus(bool value) => onFocus = value;
 
   @observable
   String searchText = '';

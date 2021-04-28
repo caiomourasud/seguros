@@ -15,7 +15,7 @@ class SimularButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: bottomSheetHeight,
-      width: MediaQuery.of(context).size.width,
+      width: double.infinity,
       margin: EdgeInsets.symmetric(vertical: bottomSheetHeight! * 0.03),
       padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 22.0),
       child: CupertinoButton(

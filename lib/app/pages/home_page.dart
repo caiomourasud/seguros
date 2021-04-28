@@ -5,7 +5,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:seguros/app/components/cached_image_widget.dart';
 import 'package:seguros/app/components/custom_modal_bottom_sheet.dart';
 import 'package:seguros/app/components/home_description.dart';
-import 'package:seguros/app/components/simular_buttom.dart';
+import 'package:seguros/app/components/bottom_sheet/simular_buttom.dart';
 import 'package:seguros/app/controllers/app_controller.dart';
 
 import 'home_modal/conhecer_content.dart';
@@ -217,7 +217,10 @@ class _HomePageState extends State<HomePage> {
                         'A aceitação do seguro estará sujeira à análise do risco.',
                         style: Theme.of(context).textTheme.subtitle1?.copyWith(
                             fontSize: 19,
-                            color: Colors.grey[800],
+                            color: Theme.of(context)
+                                .colorScheme
+                                .onSurface
+                                .withAlpha(160),
                             fontWeight: FontWeight.w300)),
                   )),
                   SliverToBoxAdapter(

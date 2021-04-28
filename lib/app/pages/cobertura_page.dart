@@ -5,7 +5,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:intl/intl.dart';
 import 'package:seguros/app/components/cobertura_description.dart';
-import 'package:seguros/app/components/continuar_buttom.dart';
+import 'package:seguros/app/components/bottom_sheet/continuar_buttom.dart';
 import 'package:seguros/app/components/custom_checkbox_listtile.dart';
 import 'package:seguros/app/components/custom_track_shape.dart';
 import 'package:seguros/app/controllers/app_controller.dart';
@@ -41,25 +41,36 @@ class _CoberturaPageState extends State<CoberturaPage> {
 
   @override
   void initState() {
-    if (_currentSliderValue == 50000) {
-      _valorTotal = widget.atividade.valor + 1.35;
-    } else if (_currentSliderValue == 75000) {
-      _valorTotal = widget.atividade.valor + 2.36;
-    } else if (_currentSliderValue == 100000) {
-      _valorTotal = widget.atividade.valor + 3.25;
-    } else if (_currentSliderValue == 125000) {
-      _valorTotal = widget.atividade.valor + 4.25;
-    } else if (_currentSliderValue == 150000) {
-      _valorTotal = widget.atividade.valor + 5.25;
-    }
+    _valorTotal = valorCobertura(_currentSliderValue);
     super.initState();
+  }
+
+  valorCobertura(cobertura) {
+    if (cobertura == 50000) {
+      return widget.atividade.valor + 1.35;
+    } else if (cobertura == 75000) {
+      return widget.atividade.valor + 2.36;
+    } else if (cobertura == 100000) {
+      return widget.atividade.valor + 3.25;
+    } else if (cobertura == 125000) {
+      return widget.atividade.valor + 4.25;
+    } else if (cobertura == 150000) {
+      return widget.atividade.valor + 5.25;
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Scaffold(
-          bottomSheet: ContinuarButton(valor: _valorTotal),
+          bottomSheet: ContinuarButton(
+              valor: _valorTotal,
+              cobertura: _currentSliderValue,
+              valorCobertura: valorCobertura(_currentSliderValue),
+              hospitalizacao: _hospitalizacao,
+              invalidez: _invalidez,
+              funeralConjugeFilhos: _funeralConjugeFilhos,
+              funeralPais: _funeralPais),
           body: CustomScrollView(
             slivers: [
               SliverAppBar(
@@ -85,7 +96,7 @@ class _CoberturaPageState extends State<CoberturaPage> {
                 ),
                 actions: [
                   Padding(
-                    padding: const EdgeInsets.only(right: 8.0),
+                    padding: const EdgeInsets.only(left: 12.0, right: 8.0),
                     child: SizedBox(width: 36.0),
                   )
                 ],
@@ -163,17 +174,8 @@ class _CoberturaPageState extends State<CoberturaPage> {
                               onChanged: (double value) {
                                 setState(() {
                                   _currentSliderValue = value;
-                                  if (value == 50000) {
-                                    _valorTotal = widget.atividade.valor + 1.35;
-                                  } else if (value == 75000) {
-                                    _valorTotal = widget.atividade.valor + 2.36;
-                                  } else if (value == 100000) {
-                                    _valorTotal = widget.atividade.valor + 3.25;
-                                  } else if (value == 125000) {
-                                    _valorTotal = widget.atividade.valor + 4.25;
-                                  } else if (value == 150000) {
-                                    _valorTotal = widget.atividade.valor + 5.25;
-                                  }
+                                  _valorTotal =
+                                      valorCobertura(_currentSliderValue);
                                   _hospitalizacao = false;
                                   _invalidez = false;
                                   _funeralConjugeFilhos = false;

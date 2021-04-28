@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -16,6 +18,8 @@ final _appController = Modular.get<AppController>();
 
 GlobalKey<NavigatorState> modalNavigatorKey = GlobalKey<NavigatorState>();
 
+late ScrollController _scrollController;
+double _scrollPosition = 0.0;
 late FocusNode _focus;
 late TextEditingController _buscar;
 
@@ -29,16 +33,27 @@ class _SimularSeguroPageState extends State<SimularSeguroPage> {
 
   @override
   void initState() {
+    Timer(Duration(milliseconds: 300), () {
+      _focus.addListener(_onFocusChange);
+    });
     _focus = FocusNode();
     _buscar = TextEditingController();
-    _focus.addListener(_onFocusChange);
+    _scrollController = ScrollController();
+    _scrollController.addListener(_scrollListener);
+
     super.initState();
   }
 
   @override
   void dispose() {
+    _focus.dispose();
+    _buscar.dispose();
     _appController.setSearchText('');
     super.dispose();
+  }
+
+  _scrollListener() {
+    setState(() => _scrollPosition = _scrollController.position.pixels);
   }
 
   _onFocusChange() {
@@ -64,96 +79,101 @@ class _SimularSeguroPageState extends State<SimularSeguroPage> {
                             atividade:
                                 _appController.atividades[atividade - 1]);
                       }))),
-          body: CustomScrollView(
-            slivers: [
-              SliverAppBar(
-                pinned: true,
-                elevation: 0.0,
-                backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-                leading: MouseRegion(
-                  cursor: SystemMouseCursors.click,
-                  child: CupertinoButton(
-                      padding: EdgeInsets.all(4.0),
-                      borderRadius: BorderRadius.circular(50.0),
-                      color: Colors.transparent,
-                      child: Icon(CupertinoIcons.chevron_back,
-                          size: 28, color: Colors.grey[600]),
-                      onPressed: () => Navigator.of(context).pop()),
-                ),
-                title: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: LinearProgressIndicator(
-                    minHeight: 2.5,
-                    value: 0.25,
-                    backgroundColor: Colors.grey[300],
+          body: Observer(builder: (_) {
+            return CustomScrollView(
+              controller: _scrollController,
+              physics: _appController.onFocus &&
+                      _scrollPosition <
+                          (MediaQuery.of(context).size.height * 0.2)
+                  ? ClampingScrollPhysics()
+                  : AlwaysScrollableScrollPhysics(),
+              slivers: [
+                SliverAppBar(
+                  pinned: true,
+                  elevation: 0.0,
+                  backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+                  leading: MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: CupertinoButton(
+                        padding: EdgeInsets.all(4.0),
+                        borderRadius: BorderRadius.circular(50.0),
+                        color: Colors.transparent,
+                        child: Icon(CupertinoIcons.chevron_back,
+                            size: 28, color: Colors.grey[600]),
+                        onPressed: () => Navigator.of(context).pop()),
                   ),
-                ),
-                actions: [
-                  Padding(
-                    padding: const EdgeInsets.only(right: 8.0),
-                    child: MouseRegion(
-                      cursor: SystemMouseCursors.click,
-                      child: CupertinoButton(
-                          padding: EdgeInsets.all(4.0),
-                          borderRadius: BorderRadius.circular(50.0),
-                          color: Colors.transparent,
-                          child: Icon(CupertinoIcons.question_circle,
-                              size: 28, color: Colors.grey[600]),
-                          onPressed: () => CustomModalBottomSheet().show(
-                              context: context,
-                              height: MediaQuery.of(context).size.height -
-                                  MediaQuery.of(context).viewPadding.top,
-                              content: DefaultView(
-                                  navigatorKey: modalNavigatorKey,
-                                  page: DuvidasContent()))),
+                  title: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: LinearProgressIndicator(
+                      minHeight: 2.5,
+                      value: 0.25,
+                      backgroundColor: Colors.grey[300],
                     ),
                   ),
-                ],
-              ),
-              SliverPadding(
-                padding: const EdgeInsets.symmetric(horizontal: 22.0),
-                sliver: SliverToBoxAdapter(
-                  child: Observer(builder: (_) {
-                    return AnimatedContainer(
-                      height: _appController.onFocus ? 0.0 : null,
-                      duration: Duration(milliseconds: 1000),
-                      child: Column(
-                        children: [
-                          SizedBox(height: 22.0),
-                          Text(
-                            'Qual é a sua atividade profissional?',
-                            style: Theme.of(context)
-                                .textTheme
-                                .headline4
-                                ?.copyWith(
-                                    fontSize: 30,
-                                    fontWeight: FontWeight.w600,
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .onSurface),
-                          ),
-                          SizedBox(height: 12.0),
-                          Opacity(
-                            opacity: 0.8,
-                            child: Text(
-                                'Selecione sua profissão atual na lista abaixo. É importante selecionar a atividade correta, pois isso interfere na sua proposta e na validação do contrato.',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline6
-                                    ?.copyWith(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.w300)),
-                          ),
-                          SizedBox(height: 32.0),
-                        ],
+                  actions: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 12.0, right: 8.0),
+                      child: MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: CupertinoButton(
+                            padding: EdgeInsets.all(4.0),
+                            borderRadius: BorderRadius.circular(50.0),
+                            color: Colors.transparent,
+                            child: Icon(CupertinoIcons.question_circle,
+                                size: 28, color: Colors.grey[600]),
+                            onPressed: () => CustomModalBottomSheet().show(
+                                context: context,
+                                height: MediaQuery.of(context).size.height -
+                                    MediaQuery.of(context).viewPadding.top,
+                                content: DefaultView(
+                                    navigatorKey: modalNavigatorKey,
+                                    page: DuvidasContent()))),
                       ),
-                    );
-                  }),
+                    ),
+                  ],
                 ),
-              ),
-              SliverPadding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                sliver: SliverPersistentHeader(
+                SliverPadding(
+                  padding: const EdgeInsets.symmetric(horizontal: 22.0),
+                  sliver: SliverToBoxAdapter(
+                    child: Observer(builder: (_) {
+                      return AnimatedContainer(
+                        height: _appController.onFocus ? 0.0 : null,
+                        duration: Duration(milliseconds: 1000),
+                        child: Column(
+                          children: [
+                            SizedBox(height: 22.0),
+                            Text(
+                              'Qual é a sua atividade profissional?',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline4
+                                  ?.copyWith(
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.w600,
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onSurface),
+                            ),
+                            SizedBox(height: 12.0),
+                            Opacity(
+                              opacity: 0.8,
+                              child: Text(
+                                  'Selecione sua profissão atual na lista abaixo. É importante selecionar a atividade correta, pois isso interfere na sua proposta e na validação do contrato.',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headline6
+                                      ?.copyWith(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w300)),
+                            ),
+                            SizedBox(height: 32.0),
+                          ],
+                        ),
+                      );
+                    }),
+                  ),
+                ),
+                SliverPersistentHeader(
                     pinned: true,
                     floating: false,
                     delegate: SearchBarWidget(
@@ -162,32 +182,32 @@ class _SimularSeguroPageState extends State<SimularSeguroPage> {
                         focus: _focus,
                         onChange: (value) =>
                             _appController.setSearchText(value))),
-              ),
-              SliverToBoxAdapter(
-                child: SizedBox(height: 10.0),
-              ),
-              SliverToBoxAdapter(
-                child: Observer(builder: (_) {
-                  return Column(
-                    children: _appController.filterAtividades
-                        .map(
-                          (item) => AtividadeListTile(
-                            value: item.value,
-                            title: item.title,
-                            groupValue: atividade,
-                            onChange: (value) {
-                              setState(() {
-                                atividade = value;
-                              });
-                            },
-                          ),
-                        )
-                        .toList(),
-                  );
-                }),
-              ),
-            ],
-          )),
+                SliverToBoxAdapter(
+                  child: SizedBox(height: 10.0),
+                ),
+                SliverToBoxAdapter(
+                  child: Observer(builder: (_) {
+                    return Column(
+                      children: _appController.filterAtividades
+                          .map(
+                            (item) => AtividadeListTile(
+                              value: item.value,
+                              title: item.title,
+                              groupValue: atividade,
+                              onChange: (value) {
+                                setState(() {
+                                  atividade = value;
+                                });
+                              },
+                            ),
+                          )
+                          .toList(),
+                    );
+                  }),
+                ),
+              ],
+            );
+          })),
     );
   }
 }

@@ -14,8 +14,20 @@ class SearchBarWidget extends SliverPersistentHeaderDelegate {
       this.texto = 'Search'});
 
   @override
-  Widget build(context, shrinkOffset, overlapsContent) => Container(
-        color: Theme.of(context).scaffoldBackgroundColor,
+  Widget build(context, shrinkOffset, overlapsContent) => AnimatedContainer(
+        duration: Duration(milliseconds: 300),
+        padding: EdgeInsets.symmetric(horizontal: 16.0),
+        decoration: new BoxDecoration(
+          color: Theme.of(context).scaffoldBackgroundColor,
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+              offset: Offset(0.0, 0.0),
+              blurRadius: overlapsContent ? 4.0 : 0.0,
+              spreadRadius: -1.0,
+              color: Colors.black54,
+            ),
+          ],
+        ),
         child: Padding(
           padding: const EdgeInsets.only(bottom: 8.0),
           child: CupertinoSearchTextField(

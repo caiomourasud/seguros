@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:intl/intl.dart';
 import 'package:seguros/app/controllers/app_controller.dart';
-import 'package:seguros/app/pages/simular_seguro_page.dart';
+import 'package:seguros/app/pages/formapagamento_page.dart';
 
 final _appController = Modular.get<AppController>();
 
@@ -11,10 +11,24 @@ final money = new NumberFormat("#,##0.00", "pt_br");
 
 class ContinuarButton extends StatelessWidget {
   final double valor;
+  final double cobertura;
+  final double valorCobertura;
+  final bool hospitalizacao;
+  final bool invalidez;
+  final bool funeralConjugeFilhos;
+  final bool funeralPais;
   final double? bottomSheetHeight;
 
   const ContinuarButton(
-      {Key? key, this.bottomSheetHeight = 102.0, required this.valor})
+      {Key? key,
+      this.bottomSheetHeight = 102.0,
+      required this.valor,
+      required this.cobertura,
+      required this.valorCobertura,
+      required this.hospitalizacao,
+      required this.invalidez,
+      required this.funeralConjugeFilhos,
+      required this.funeralPais})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -60,7 +74,14 @@ class ContinuarButton extends StatelessWidget {
                           ?.copyWith(color: Colors.white)),
                   onPressed: () => Navigator.push(_appController.context!,
                           CupertinoPageRoute(builder: (context) {
-                        return SimularSeguroPage();
+                        return FormaPagamentoPage(
+                            valor: valor,
+                            cobertura: cobertura,
+                            valorCobertura: valorCobertura,
+                            hospitalizacao: hospitalizacao,
+                            invalidez: invalidez,
+                            funeralConjugeFilhos: funeralConjugeFilhos,
+                            funeralPais: funeralPais);
                       }))),
             ],
           ),
