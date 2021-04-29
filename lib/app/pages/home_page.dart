@@ -5,12 +5,14 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:seguros/app/components/cached_image_widget.dart';
 import 'package:seguros/app/components/custom_modal_bottom_sheet.dart';
 import 'package:seguros/app/components/home_description.dart';
-import 'package:seguros/app/components/bottom_sheet/simular_buttom.dart';
+import 'package:seguros/app/components/bottom_sheets/simular_buttom.dart';
 import 'package:seguros/app/controllers/app_controller.dart';
 
 import 'home_modal/conhecer_content.dart';
 import 'home_modal/duvidas_content.dart';
 import 'view/default_view.dart';
+
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 final _appController = Modular.get<AppController>();
 
@@ -119,7 +121,7 @@ class _HomePageState extends State<HomePage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Nubank Vida',
+                            AppLocalizations.of(context)!.nubankVida,
                             style: Theme.of(context)
                                 .textTheme
                                 .headline4
@@ -129,8 +131,7 @@ class _HomePageState extends State<HomePage> {
                                         .onSurface),
                           ),
                           SizedBox(height: 32.0),
-                          Text(
-                              'Finalmente um seguro de vida simples e acessível para você, com transparência em todas as etapas.',
+                          Text(AppLocalizations.of(context)!.seguroSimples,
                               style: Theme.of(context)
                                   .textTheme
                                   .headline6
@@ -143,7 +144,9 @@ class _HomePageState extends State<HomePage> {
                                 child: Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    Text('Conhecer mais',
+                                    Text(
+                                        AppLocalizations.of(context)!
+                                            .conhecerMais,
                                         style: Theme.of(context)
                                             .textTheme
                                             .button
@@ -179,28 +182,28 @@ class _HomePageState extends State<HomePage> {
                           SizedBox(height: 42.0),
                           HomeDescription(
                               icon: CupertinoIcons.device_phone_portrait,
-                              title: 'Simples como deve ser',
-                              subtitle:
-                                  'Tudo feito de um jeito para que você saiba exatamente o que está contratando.'),
+                              title: AppLocalizations.of(context)!.simples,
+                              subtitle: AppLocalizations.of(context)!
+                                  .simplesDescription),
                           SizedBox(height: 42.0),
                           HomeDescription(
                               icon: CupertinoIcons.money_dollar,
-                              title: 'Preço que cabe no bolso',
-                              subtitle:
-                                  'Preço médio inicial de R\$9 por mês, sem tarifas escondidas e sem ajustes de preço por idade durante 5 anos. Simples assim.'),
+                              title: AppLocalizations.of(context)!.precoBolso,
+                              subtitle: AppLocalizations.of(context)!
+                                  .precoBolsoDescription),
                           SizedBox(height: 42.0),
                           HomeDescription(
                               icon: CupertinoIcons.pencil_ellipsis_rectangle,
-                              title:
-                                  'Coberturas Personalizáveis e úteis para você',
-                              subtitle:
-                                  'Monte seu seguro com coberturas que fazem a diferença para você e para o seu momento de vida.'),
+                              title: AppLocalizations.of(context)!
+                                  .coberturasPersonalizaveis,
+                              subtitle: AppLocalizations.of(context)!
+                                  .coberturasPersonalizaveisDescription),
                           SizedBox(height: 42.0),
                           HomeDescription(
                               icon: CupertinoIcons.phone,
-                              title: 'Se você precisar, estaremos aqui',
-                              subtitle:
-                                  'Facilidade para adicionar o seguro pelo aplicativo ou telefone, com um time 100% dedicado a realmente te dar suporte se você precisar.')
+                              title: AppLocalizations.of(context)!.sePrecisar,
+                              subtitle: AppLocalizations.of(context)!
+                                  .sePrecisarDescription)
                         ],
                       ),
                     ),
@@ -213,8 +216,7 @@ class _HomePageState extends State<HomePage> {
                     padding:
                         EdgeInsets.symmetric(horizontal: 16.0, vertical: 22.0),
                     color: Colors.grey[200],
-                    child: Text(
-                        'A aceitação do seguro estará sujeira à análise do risco.',
+                    child: Text(AppLocalizations.of(context)!.analiseRisco,
                         style: Theme.of(context).textTheme.subtitle1?.copyWith(
                             fontSize: 19,
                             color: Theme.of(context)

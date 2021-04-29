@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:seguros/app/components/atividade_listtille.dart';
+import 'package:seguros/app/components/listtiles/atividade_listtille.dart';
 import 'package:seguros/app/components/custom_modal_bottom_sheet.dart';
 import 'package:seguros/app/components/searchbar_widget.dart';
 import 'package:seguros/app/controllers/app_controller.dart';

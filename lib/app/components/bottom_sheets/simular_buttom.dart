@@ -4,6 +4,8 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:seguros/app/controllers/app_controller.dart';
 import 'package:seguros/app/pages/simular_seguro_page.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 final _appController = Modular.get<AppController>();
 
 class SimularButton extends StatelessWidget {
@@ -22,7 +24,8 @@ class SimularButton extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(50)),
           color: Colors.purple[800],
           pressedOpacity: 0.8,
-          child: Text('Simular meu seguro',
+          child: Text(
+              AppLocalizations.of(_appController.context!)!.btnSimularSeguro,
               style: Theme.of(context)
                   .textTheme
                   .headline6

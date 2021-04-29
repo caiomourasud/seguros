@@ -11,27 +11,23 @@ dependencies:
   flutter:
     sdk: flutter
 
+  flutter_localizations:
+    sdk: flutter         
 
   cupertino_icons: ^1.0.2
   font_awesome_flutter: ^9.0.0
   google_fonts: ^2.0.0
-  # flutter_svg: ^0.21.0+1
 
   intl: ^0.17.0
   mobx: ^2.0.1
   flutter_mobx: ^2.0.0
   flutter_modular: ^3.0.2+1
   http: ^0.13.1
-  # hive: ^2.0.2
-  # hive_flutter: ^1.0.0
-  # path_provider: ^2.0.1
   connectivity: ^3.0.3
   shared_preferences: ^2.0.5
   extended_image: ^4.0.1
-  # url_launcher: ^6.0.3
 
 dev_dependencies:
-  # hive_generator:
   mobx_codegen:
   build_runner: 
   flutter_test:
@@ -40,4 +36,5 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
+  generate: true
 

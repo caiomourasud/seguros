@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:intl/intl.dart';
-import 'package:seguros/app/components/duvida_listtile.dart';
+import 'package:seguros/app/components/listtiles/duvida_listtile.dart';
 import 'package:seguros/app/controllers/app_controller.dart';
 
 import 'contratar_page.dart';

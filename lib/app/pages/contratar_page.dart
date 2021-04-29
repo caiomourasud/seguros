@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:intl/intl.dart';
-import 'package:seguros/app/components/bottom_sheet/contratar_buttom.dart';
-import 'package:seguros/app/components/contratar_listtile.dart';
-import 'package:seguros/app/components/contratar_value_listtile.dart';
+import 'package:seguros/app/components/bottom_sheets/contratar_buttom.dart';
+import 'package:seguros/app/components/listtiles/contratar_listtile.dart';
+import 'package:seguros/app/components/listtiles/contratar_value_listtile.dart';
 
 final money = new NumberFormat("#,##0.00", "pt_br");
 
