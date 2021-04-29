@@ -6,7 +6,8 @@ import 'package:seguros/app/components/bottom_sheets/contratar_buttom.dart';
 import 'package:seguros/app/components/listtiles/contratar_listtile.dart';
 import 'package:seguros/app/components/listtiles/contratar_value_listtile.dart';
 
-final money = new NumberFormat("#,##0.00", "pt_br");
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:seguros/app/utils/converters.dart';
 
 GlobalKey<NavigatorState> modalNavigatorKey = GlobalKey<NavigatorState>();
 
@@ -79,7 +80,11 @@ class _ContratarPageState extends State<ContratarPage> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 22.0),
                       child: Text(
-                        'Você vai pagar \nR\$ ${money.format(widget.valor)} / mês',
+                        AppLocalizations.of(context)!.voceVaiPagar +
+                            '\n' +
+                            Converters().setReal(context) +
+                            '\$ ${Converters().moneyFormat(context).format(widget.valor)} / ' +
+                            AppLocalizations.of(context)!.mes,
                         style: Theme.of(context).textTheme.headline5?.copyWith(
                             fontSize: 31,
                             fontWeight: FontWeight.w600,
@@ -91,7 +96,8 @@ class _ContratarPageState extends State<ContratarPage> {
                       padding: const EdgeInsets.symmetric(horizontal: 22.0),
                       child: Opacity(
                         opacity: 0.8,
-                        child: Text('Sem tarifas escondidas',
+                        child: Text(
+                            AppLocalizations.of(context)!.semTarifasEscondidas,
                             style: Theme.of(context)
                                 .textTheme
                                 .headline6
@@ -103,7 +109,8 @@ class _ContratarPageState extends State<ContratarPage> {
                     ListTile(
                         minLeadingWidth: 24.0,
                         leading: Icon(CupertinoIcons.money_dollar),
-                        title: Text('Forma de \npagamento',
+                        title: Text(
+                            AppLocalizations.of(context)!.formaPagamento,
                             overflow: TextOverflow.ellipsis,
                             style: Theme.of(context)
                                 .textTheme
@@ -122,7 +129,7 @@ class _ContratarPageState extends State<ContratarPage> {
                     ListTile(
                         minLeadingWidth: 24.0,
                         leading: Icon(Icons.event),
-                        title: Text('Data de pagamento',
+                        title: Text(AppLocalizations.of(context)!.dataPagamento,
                             overflow: TextOverflow.ellipsis,
                             style: Theme.of(context)
                                 .textTheme
@@ -145,7 +152,8 @@ class _ContratarPageState extends State<ContratarPage> {
                       padding: const EdgeInsets.symmetric(horizontal: 22.0),
                       child: Opacity(
                         opacity: 0.8,
-                        child: Text('Cobertura por morte',
+                        child: Text(
+                            AppLocalizations.of(context)!.coberturaMorte,
                             style: Theme.of(context)
                                 .textTheme
                                 .headline6
@@ -155,14 +163,17 @@ class _ContratarPageState extends State<ContratarPage> {
                     ),
                     SizedBox(height: 22.0),
                     ContratarListTile(
-                      title: 'Valor da cobertura',
-                      text: 'R\$ ${money.format(widget.cobertura)}',
-                      trailing: 'R\$ ${money.format(widget.valorCobertura)}',
+                      title: AppLocalizations.of(context)!.valorCobertura,
+                      text: Converters().setReal(context) +
+                          '\$ ${Converters().moneyFormat(context).format(widget.cobertura)}',
+                      trailing: Converters().setReal(context) +
+                          '\$ ${Converters().moneyFormat(context).format(widget.valorCobertura)}',
                     ),
                     ContratarListTile(
-                      title: 'Assistência funeral do titular',
-                      text:
-                          'R\$ ${money.format(5000)} de cobertura para prestação do serviço funeral ou reembolso dos custos.',
+                      title: AppLocalizations.of(context)!
+                          .asssitenciaFuneralDoTitular,
+                      text: AppLocalizations.of(context)!
+                          .asssitenciaFuneralDoTitularDescription,
                     ),
                     SizedBox(height: 22.0),
                     if (widget.hospitalizacao ||
@@ -189,37 +200,43 @@ class _ContratarPageState extends State<ContratarPage> {
                       SizedBox(height: 22.0),
                     if (widget.hospitalizacao)
                       ContratarListTile(
-                        title: 'Hospitalização',
-                        text:
-                            'Caso sofra algum acidente e precise ficar no hospital por pelo menos 48h, você recebe uma diária de R\$ 150,00 para usar como quiser.',
-                        trailing: 'R\$ ${money.format(1.59)}',
+                        title: AppLocalizations.of(context)!.hospitalizacao,
+                        text: AppLocalizations.of(context)!
+                            .hospitalizacaoDescription,
+                        trailing: Converters().setReal(context) +
+                            '\$ ${Converters().moneyFormat(context).format(1.59)}',
                       ),
                     if (widget.invalidez)
                       ContratarListTile(
-                        title: 'Invalidez',
+                        title: AppLocalizations.of(context)!.invalidez,
                         text:
-                            'Receba até 100% do valor da cobertura total do seu seguro no caso de invalidez total ou parcial por acidente.',
-                        trailing: 'R\$ ${money.format(3.03)}',
+                            AppLocalizations.of(context)!.invalidezDescription,
+                        trailing: Converters().setReal(context) +
+                            '\$ ${Converters().moneyFormat(context).format(3.03)}',
                       ),
                     if (widget.funeralConjugeFilhos || widget.funeralPais)
                       ContratarListTile(
-                        title: 'Assistência funeral de familiares',
-                        text:
-                            'É possível escolher entre a prestação do serviço funeral ou reembolso dos custos de R\$ 5.000,00 de cobertura, para cada familiar.',
-                        trailing:
-                            'R\$ ${money.format(0.0 + (widget.funeralConjugeFilhos ? 1.02 : 0.0) + (widget.funeralPais ? 8.23 : 0.0))}',
+                        title: AppLocalizations.of(context)!
+                            .asssitenciaFuneralDoFamiliares,
+                        text: AppLocalizations.of(context)!
+                            .asssitenciaFuneralDoFamiliaresDescription,
+                        trailing: Converters().setReal(context) +
+                            '\$ ${Converters().moneyFormat(context).format(0.0 + (widget.funeralConjugeFilhos ? 1.02 : 0.0) + (widget.funeralPais ? 8.23 : 0.0))}',
                       ),
                     ContratarValueListTile(
-                      text: 'Valor líquido',
-                      trailing: 'R\$ ${money.format(widget.valor - 0.08)}',
+                      text: AppLocalizations.of(context)!.valorLiquido,
+                      trailing: Converters().setReal(context) +
+                          '\$ ${Converters().moneyFormat(context).format(widget.valor - 0.08)}',
                     ),
                     ContratarValueListTile(
-                      text: 'Valor IOF',
-                      trailing: 'R\$ ${money.format(0.08)}',
+                      text: AppLocalizations.of(context)!.valorIOF,
+                      trailing: Converters().setReal(context) +
+                          '\$ ${Converters().moneyFormat(context).format(0.08)}',
                     ),
                     ContratarValueListTile(
-                      text: 'Pagamento mensal',
-                      trailing: 'R\$ ${money.format(widget.valor)}',
+                      text: AppLocalizations.of(context)!.pagamentoMensal,
+                      trailing: Converters().setReal(context) +
+                          '\$ ${Converters().moneyFormat(context).format(widget.valor)}',
                       isBold: true,
                     ),
                   ],
@@ -235,7 +252,9 @@ class _ContratarPageState extends State<ContratarPage> {
                       child: Opacity(
                         opacity: 0.8,
                         child: Text(
-                            'Já está incluso nesse valor a remuneração do Nubank, que é uma taxa de 40% do pagamento mensal líquido, igual a R\$ ${money.format(widget.valor * 0.4)}.',
+                            AppLocalizations.of(context)!.incluso40 +
+                                Converters().setReal(context) +
+                                '\$ ${Converters().moneyFormat(context).format(widget.valor * 0.4)}.',
                             style: Theme.of(context)
                                 .textTheme
                                 .subtitle1
@@ -253,20 +272,28 @@ class _ContratarPageState extends State<ContratarPage> {
                                 ?.copyWith(fontSize: 17),
                             children: <TextSpan>[
                               TextSpan(
-                                  text:
-                                      'Coletamos seus dados para lhe oferecer seguro de vida. Para verificar mais detalhes, acesse a ',
+                                  text: AppLocalizations.of(context)!
+                                      .dadosColetados,
                                   style: TextStyle(
                                       color: Theme.of(context)
                                           .colorScheme
                                           .onSurface
                                           .withAlpha(160))),
                               TextSpan(
-                                  text: 'política de privacidade.',
+                                  text:
+                                      AppLocalizations.of(context)!.privacidade,
                                   style: TextStyle(
                                       color: Theme.of(context)
                                           .colorScheme
                                           .secondary,
                                       fontWeight: FontWeight.bold)),
+                              TextSpan(
+                                  text: '.',
+                                  style: TextStyle(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onSurface
+                                          .withAlpha(160))),
                             ]),
                       ),
                     ),
@@ -287,17 +314,25 @@ class _ContratarPageState extends State<ContratarPage> {
                       children: <TextSpan>[
                         TextSpan(
                             text:
-                                'Este seguro é intermediado pelo Nubank e a seguradora responsável é a Chubb, empresa com operação em mais de 50 países além do Brasil. ',
+                                AppLocalizations.of(context)!.intermediadoChubb,
                             style: TextStyle(
                                 color: Theme.of(context)
                                     .colorScheme
                                     .onSurface
                                     .withAlpha(160))),
                         TextSpan(
-                            text: 'Entender como isso funciona.',
+                            text: AppLocalizations.of(context)!
+                                .entenderComoFunciona,
                             style: TextStyle(
                                 color: Theme.of(context).colorScheme.secondary,
                                 fontWeight: FontWeight.bold)),
+                        TextSpan(
+                            text: '.',
+                            style: TextStyle(
+                                color: Theme.of(context)
+                                    .colorScheme
+                                    .onSurface
+                                    .withAlpha(160))),
                       ]),
                 ),
               )),

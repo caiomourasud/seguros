@@ -5,12 +5,13 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:intl/intl.dart';
 import 'package:seguros/app/components/listtiles/duvida_listtile.dart';
 import 'package:seguros/app/controllers/app_controller.dart';
+import 'package:seguros/app/utils/converters.dart';
 
 import 'contratar_page.dart';
 
-final _appController = Modular.get<AppController>();
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-final money = new NumberFormat("#,##0.00", "pt_br");
+final _appController = Modular.get<AppController>();
 
 GlobalKey<NavigatorState> modalNavigatorKey = GlobalKey<NavigatorState>();
 
@@ -80,7 +81,7 @@ class _FormaPagamentoPageState extends State<FormaPagamentoPage> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 22.0),
                   child: Text(
-                    'Escolha a forma de pagamento',
+                    AppLocalizations.of(context)!.escolhaFormaPagamento,
                     style: Theme.of(context).textTheme.headline5?.copyWith(
                         fontSize: 30,
                         fontWeight: FontWeight.w600,
@@ -93,7 +94,8 @@ class _FormaPagamentoPageState extends State<FormaPagamentoPage> {
                   child: Opacity(
                     opacity: 0.8,
                     child: Text(
-                        'A cobrança é feita, mensalmente, através da forma de pagamento que você escolher.',
+                        AppLocalizations.of(context)!
+                            .escolhaFormaPagamentoDescription,
                         style: Theme.of(context).textTheme.headline6?.copyWith(
                             fontSize: 22, fontWeight: FontWeight.w300)),
                   ),
@@ -102,14 +104,19 @@ class _FormaPagamentoPageState extends State<FormaPagamentoPage> {
                 DuvidaListTile(
                     hasDividerPadding: false,
                     icon: CupertinoIcons.creditcard,
-                    title: 'Cartão de crédito Nubank',
-                    text: 'Vencimento da fatura em 12 MAI',
+                    title: AppLocalizations.of(context)!.cartaoNubank,
+                    text: AppLocalizations.of(context)!.vencimentoEm +
+                        DateFormat('dd MMM',
+                                Localizations.localeOf(context).toString())
+                            .format(DateTime.now())
+                            .toUpperCase(),
                     onTap: () {
                       Navigator.push(_appController.context!,
                           CupertinoPageRoute(builder: (context) {
                         return ContratarPage(
                             valor: widget.valor,
-                            formaPagamento: 'Cartão de crédito',
+                            formaPagamento:
+                                AppLocalizations.of(context)!.cartaoCredito,
                             cobertura: widget.cobertura,
                             valorCobertura: widget.valorCobertura,
                             hospitalizacao: widget.hospitalizacao,
@@ -121,14 +128,17 @@ class _FormaPagamentoPageState extends State<FormaPagamentoPage> {
                 DuvidaListTile(
                     hasDividerPadding: false,
                     icon: CupertinoIcons.money_dollar,
-                    title: 'Conta Nubank',
-                    text: 'Seu saldo atual é de R\$ 511,12',
+                    title: AppLocalizations.of(context)!.contaNubank,
+                    text: AppLocalizations.of(context)!.saldoAtual +
+                        Converters().setReal(context) +
+                        '\$ ${Converters().moneyFormat(context).format(516.12)}',
                     onTap: () {
                       Navigator.push(_appController.context!,
                           CupertinoPageRoute(builder: (context) {
                         return ContratarPage(
                             valor: widget.valor,
-                            formaPagamento: 'Conta Nubank',
+                            formaPagamento:
+                                AppLocalizations.of(context)!.contaNubank,
                             cobertura: widget.cobertura,
                             valorCobertura: widget.valorCobertura,
                             hospitalizacao: widget.hospitalizacao,
@@ -142,8 +152,7 @@ class _FormaPagamentoPageState extends State<FormaPagamentoPage> {
                   padding: const EdgeInsets.symmetric(horizontal: 22.0),
                   child: Opacity(
                     opacity: 0.8,
-                    child: Text(
-                        'Você poderá revisar os detalhes de seu seguro de vida mais tarde.',
+                    child: Text(AppLocalizations.of(context)!.revisarDetalhes,
                         style: Theme.of(context).textTheme.headline6?.copyWith(
                             fontSize: 17, fontWeight: FontWeight.w300)),
                   ),

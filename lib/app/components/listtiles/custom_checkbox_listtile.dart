@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-
-final money = new NumberFormat("#,##0.00", "pt_br");
+import 'package:seguros/app/utils/converters.dart';
 
 class CustomCheckBoxListTitle extends StatelessWidget {
   final String title;
@@ -43,6 +41,8 @@ class CustomCheckBoxListTitle extends StatelessWidget {
               borderRadius: new BorderRadius.all(Radius.circular(4.0)),
             ),
             padding: EdgeInsets.all(4.0),
-            child: Text('+ R\$ ${money.format(valorAdicional)}')));
+            child: Text('+ ' +
+                Converters().setReal(context) +
+                '\$ ${Converters().moneyFormat(context).format(valorAdicional)}')));
   }
 }

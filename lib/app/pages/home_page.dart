@@ -4,7 +4,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:seguros/app/components/cached_image_widget.dart';
 import 'package:seguros/app/components/custom_modal_bottom_sheet.dart';
-import 'package:seguros/app/components/home_description.dart';
+import 'package:seguros/app/components/descriptions/home_description.dart';
 import 'package:seguros/app/components/bottom_sheets/simular_buttom.dart';
 import 'package:seguros/app/controllers/app_controller.dart';
 

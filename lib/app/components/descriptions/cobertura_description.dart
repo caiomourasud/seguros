@@ -1,14 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:intl/intl.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:seguros/app/controllers/app_controller.dart';
 import 'package:seguros/app/pages/view/default_view.dart';
+import 'package:seguros/app/utils/converters.dart';
 
-import 'custom_modal_bottom_sheet.dart';
+import '../custom_modal_bottom_sheet.dart';
+
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+final _appController = Modular.get<AppController>();
 
 GlobalKey<NavigatorState> modalNavigatorKey = GlobalKey<NavigatorState>();
-
-final money = new NumberFormat("#,##0.00", "pt_br");
 
 class CoberturaDescription extends StatelessWidget {
   final String? title;
@@ -45,9 +49,14 @@ class CoberturaDescription extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   if (title != null)
-                    Text(title!,
-                        style: Theme.of(context).textTheme.headline6?.copyWith(
-                            fontSize: 17.8, fontWeight: FontWeight.w500)),
+                    Expanded(
+                      child: Text(title!,
+                          style: Theme.of(context)
+                              .textTheme
+                              .headline6
+                              ?.copyWith(
+                                  fontSize: 17.8, fontWeight: FontWeight.w500)),
+                    ),
                   if (valorAdicional != null)
                     Row(
                       mainAxisSize: MainAxisSize.min,
@@ -60,8 +69,11 @@ class CoberturaDescription extends StatelessWidget {
                             ),
                             padding: EdgeInsets.all(4.0),
                             child: Text(valorAdicional == 0.0
-                                ? 'Incluído'
-                                : '+ R\$ ${money.format(valorAdicional)}')),
+                                ? AppLocalizations.of(_appController.context!)!
+                                    .incluido
+                                : '+ ' +
+                                    Converters().setReal(context) +
+                                    '\$ ${Converters().moneyFormat(context).format(valorAdicional)}')),
                         if (switchWidget != null) SizedBox(width: 8.0),
                         if (switchWidget != null) switchWidget!
                       ],
@@ -99,7 +111,9 @@ class CoberturaDescription extends StatelessWidget {
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text('Ver detalhes',
+                        Text(
+                            AppLocalizations.of(_appController.context!)!
+                                .verDetalhes,
                             style: Theme.of(context).textTheme.button?.copyWith(
                                 fontSize: 16,
                                 color: Theme.of(context).accentColor)),

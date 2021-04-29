@@ -55,10 +55,10 @@ class SearchBarWidget extends SliverPersistentHeaderDelegate {
       );
 
   @override
-  double get maxExtent => 60.0;
+  double get maxExtent => 57.2;
 
   @override
-  double get minExtent => 60.0;
+  double get minExtent => 57.2;
 
   @override
   bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) => true;

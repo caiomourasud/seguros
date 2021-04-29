@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:intl/intl.dart';
 import 'package:seguros/app/controllers/app_controller.dart';
 import 'package:seguros/app/pages/formapagamento_page.dart';
 
-final _appController = Modular.get<AppController>();
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:seguros/app/utils/converters.dart';
 
-final money = new NumberFormat("#,##0.00", "pt_br");
+final _appController = Modular.get<AppController>();
 
 class ContinuarButton extends StatelessWidget {
   final double valor;
@@ -49,7 +49,9 @@ class ContinuarButton extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'R\$ ${money.format(valor)} / mês',
+                    Converters().setReal(context) +
+                        '\$ ${Converters().moneyFormat(context).format(valor)} / ' +
+                        AppLocalizations.of(_appController.context!)!.mes,
                     style: Theme.of(context)
                         .textTheme
                         .headline6
@@ -57,7 +59,9 @@ class ContinuarButton extends StatelessWidget {
                   ),
                   Opacity(
                     opacity: 0.8,
-                    child: Text('Sem tarifas escondidas',
+                    child: Text(
+                        AppLocalizations.of(_appController.context!)!
+                            .semTarifasEscondidas,
                         style: Theme.of(context).textTheme.subtitle1),
                   ),
                 ],
@@ -67,7 +71,8 @@ class ContinuarButton extends StatelessWidget {
                   color: Colors.purple[800],
                   pressedOpacity: 0.8,
                   padding: EdgeInsets.fromLTRB(26.0, 14.0, 26.0, 14.0),
-                  child: Text('Continuar',
+                  child: Text(
+                      AppLocalizations.of(_appController.context!)!.continuar,
                       style: Theme.of(context)
                           .textTheme
                           .headline6

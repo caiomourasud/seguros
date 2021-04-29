@@ -1,10 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:seguros/app/controllers/app_controller.dart';
+
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+final _appController = Modular.get<AppController>();
+
 class ContratarButton extends StatelessWidget {
   final double? bottomSheetHeight;
 
-  const ContratarButton({Key? key, this.bottomSheetHeight = 158.0})
+  const ContratarButton({Key? key, this.bottomSheetHeight = 164.0})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -22,7 +29,9 @@ class ContratarButton extends StatelessWidget {
                 borderRadius: BorderRadius.all(Radius.circular(50)),
                 color: Colors.purple[800],
                 pressedOpacity: 0.8,
-                child: Text('Contratar seguro',
+                child: Text(
+                    AppLocalizations.of(_appController.context!)!
+                        .contratarSeguro,
                     style: Theme.of(context)
                         .textTheme
                         .headline6
@@ -40,13 +49,18 @@ class ContratarButton extends StatelessWidget {
                     ?.copyWith(fontSize: 15),
                 children: <TextSpan>[
                   TextSpan(
-                    text: 'Ao continuar, você aceita os ',
+                    text: AppLocalizations.of(_appController.context!)!
+                        .continuarAceita,
                   ),
                   TextSpan(
-                      text: 'Termos e condições.',
+                      text:
+                          AppLocalizations.of(_appController.context!)!.termos,
                       style: TextStyle(
                           color: Theme.of(context).colorScheme.secondary,
                           fontWeight: FontWeight.bold)),
+                  TextSpan(
+                    text: '.',
+                  ),
                 ]),
           ),
           SizedBox(

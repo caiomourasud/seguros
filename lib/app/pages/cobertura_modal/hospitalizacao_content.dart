@@ -5,6 +5,8 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:seguros/app/controllers/app_controller.dart';
 import 'package:seguros/app/pages/home_modal/duvidas_content.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 final _appController = Modular.get<AppController>();
 
 class HospitalizacaoContent extends StatelessWidget {
@@ -66,7 +68,9 @@ class HospitalizacaoContent extends StatelessWidget {
                     children: [
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 16.0),
-                        child: Text('Hospitalização por acidente',
+                        child: Text(
+                            AppLocalizations.of(_appController.context!)!
+                                .hospitalizacaoAcidente,
                             style: Theme.of(context)
                                 .textTheme
                                 .headline6
@@ -80,7 +84,9 @@ class HospitalizacaoContent extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('O que é',
+                            Text(
+                                AppLocalizations.of(_appController.context!)!
+                                    .oQueE,
                                 style: Theme.of(context)
                                     .textTheme
                                     .headline6
@@ -89,8 +95,8 @@ class HospitalizacaoContent extends StatelessWidget {
                               height: 24.0,
                             ),
                             Text(
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                                "Curabitur auctor ipsum cursus risus molestie lobortis. ",
+                                AppLocalizations.of(_appController.context!)!
+                                    .loremIpsum1,
                                 style: Theme.of(context)
                                     .textTheme
                                     .headline6
@@ -106,7 +112,9 @@ class HospitalizacaoContent extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('Como funciona',
+                            Text(
+                                AppLocalizations.of(_appController.context!)!
+                                    .comoFunciona,
                                 style: Theme.of(context)
                                     .textTheme
                                     .headline6
@@ -115,9 +123,8 @@ class HospitalizacaoContent extends StatelessWidget {
                               height: 24.0,
                             ),
                             Text(
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                                "Curabitur auctor ipsum cursus risus molestie lobortis. "
-                                "Ut rutrum est sit amet velit ullamcorper dictum. ",
+                                AppLocalizations.of(_appController.context!)!
+                                    .loremIpsum1,
                                 style: Theme.of(context)
                                     .textTheme
                                     .headline6
@@ -133,7 +140,9 @@ class HospitalizacaoContent extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('Período de carência',
+                            Text(
+                                AppLocalizations.of(_appController.context!)!
+                                    .periodoCarencia,
                                 style: Theme.of(context)
                                     .textTheme
                                     .headline6
@@ -141,7 +150,9 @@ class HospitalizacaoContent extends StatelessWidget {
                             SizedBox(
                               height: 24.0,
                             ),
-                            Text("Lorem ipsum dolor sit amet elit.",
+                            Text(
+                                AppLocalizations.of(_appController.context!)!
+                                    .loremIpsum1,
                                 style: Theme.of(context)
                                     .textTheme
                                     .headline6

@@ -7,6 +7,8 @@ import 'package:seguros/app/controllers/app_controller.dart';
 
 import 'duvidas_content.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 final _appController = Modular.get<AppController>();
 
 class ConhecerContent extends StatelessWidget {
@@ -68,7 +70,9 @@ class ConhecerContent extends StatelessWidget {
                     children: [
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 16.0),
-                        child: Text('Seguro de vida do Nubank',
+                        child: Text(
+                            AppLocalizations.of(_appController.context!)!
+                                .seguroDeVidaNubank,
                             style: Theme.of(context)
                                 .textTheme
                                 .headline6
@@ -82,7 +86,9 @@ class ConhecerContent extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('O que é seguro de vida?',
+                            Text(
+                                AppLocalizations.of(_appController.context!)!
+                                    .oQueEseguroDeVida,
                                 style: Theme.of(context)
                                     .textTheme
                                     .headline6
@@ -91,17 +97,8 @@ class ConhecerContent extends StatelessWidget {
                               height: 24.0,
                             ),
                             Text(
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                                "Curabitur auctor ipsum cursus risus molestie lobortis. "
-                                "Ut rutrum est sit amet velit ullamcorper dictum. "
-                                "Etiam eget malesuada elit, scelerisque sagittis velit. "
-                                "\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. "
-                                "Curabitur auctor ipsum cursus risus molestie lobortis."
-                                "\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. "
-                                "Curabitur auctor ipsum cursus risus molestie lobortis. "
-                                "Ut rutrum est sit amet velit ullamcorper dictum. "
-                                "Etiam eget malesuada elit, scelerisque sagittis velit."
-                                "Curabitur auctor ipsum. ",
+                                AppLocalizations.of(_appController.context!)!
+                                    .loremIpsum3,
                                 style: Theme.of(context)
                                     .textTheme
                                     .headline6
@@ -117,7 +114,9 @@ class ConhecerContent extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('Seguro de vida é pra mim?',
+                            Text(
+                                AppLocalizations.of(_appController.context!)!
+                                    .seguroDeVidaPraMim,
                                 style: Theme.of(context)
                                     .textTheme
                                     .headline6
@@ -126,17 +125,8 @@ class ConhecerContent extends StatelessWidget {
                               height: 24.0,
                             ),
                             Text(
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                                "Curabitur auctor ipsum cursus risus molestie lobortis. "
-                                "Ut rutrum est sit amet velit ullamcorper dictum. "
-                                "Etiam eget malesuada elit, scelerisque sagittis velit. "
-                                "\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. "
-                                "Curabitur auctor ipsum cursus risus molestie lobortis. "
-                                "Ut rutrum est sit amet velit ullamcorper dictum."
-                                "\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. "
-                                "Curabitur auctor ipsum cursus risus molestie lobortis. "
-                                "Ut rutrum est sit amet velit ullamcorper dictum. "
-                                "Etiam eget malesuada elit, scelerisque sagittis velit.",
+                                AppLocalizations.of(_appController.context!)!
+                                    .loremIpsum3,
                                 style: Theme.of(context)
                                     .textTheme
                                     .headline6

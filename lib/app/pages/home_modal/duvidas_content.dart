@@ -5,6 +5,8 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:seguros/app/components/listtiles/duvida_listtile.dart';
 import 'package:seguros/app/controllers/app_controller.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 final _appController = Modular.get<AppController>();
 
 class DuvidasContent extends StatelessWidget {
@@ -53,7 +55,10 @@ class DuvidasContent extends StatelessWidget {
                             ),
                             Opacity(
                               opacity: 0.8,
-                              child: Text('SEGURO DE VIDA',
+                              child: Text(
+                                  AppLocalizations.of(_appController.context!)!
+                                      .seguroDeVida
+                                      .toUpperCase(),
                                   style:
                                       TextStyle(fontWeight: FontWeight.bold)),
                             ),
@@ -77,32 +82,35 @@ class DuvidasContent extends StatelessWidget {
                   color: Theme.of(context).scaffoldBackgroundColor,
                   child: ListView(padding: EdgeInsets.zero, children: [
                     DuvidaListTile(
-                        title: 'O que Nubank Vida?',
-                        text:
-                            'Lorem ipsum dolor sit amet, conse ctetur adipiscing elit.'),
+                        title: AppLocalizations.of(_appController.context!)!
+                            .oQueEnubankVida,
+                        text: AppLocalizations.of(_appController.context!)!
+                            .loremIpsum2),
                     DuvidaListTile(
-                        title:
-                            'Não estou encontrando o Nubank Vida no meu aplicativo Nubank. Como faço para ter acesso?',
-                        text:
-                            'Lorem ipsum dolor sit amet, conse ctetur adipiscing elit.'),
+                        title: AppLocalizations.of(_appController.context!)!
+                            .naoEncontro,
+                        text: AppLocalizations.of(_appController.context!)!
+                            .loremIpsum1),
                     DuvidaListTile(
-                        title:
-                            'Como meus beneficiários acionam o seguro de vida?',
-                        text:
-                            'Lorem ipsum dolor sit amet, conse ctetur adipiscing elit.'),
+                        title: AppLocalizations.of(_appController.context!)!
+                            .comoBeneficiariosAcionam,
+                        text: AppLocalizations.of(_appController.context!)!
+                            .loremIpsum3),
                     DuvidaListTile(
-                        title: 'Quem deveria ter um seguro de vida?',
-                        text:
-                            'Lorem ipsum dolor sit amet, conse ctetur adipiscing elit.'),
+                        title: AppLocalizations.of(_appController.context!)!
+                            .quemDeveriaTerSeguro,
+                        text: AppLocalizations.of(_appController.context!)!
+                            .loremIpsum2),
                     DuvidaListTile(
-                        title:
-                            'Esse seguro de vida cobre doenças geralmente excluídas?',
-                        text:
-                            'Lorem ipsum dolor sit amet, conse ctetur adipiscing elit.'),
+                        title: AppLocalizations.of(_appController.context!)!
+                            .seguroCobreDoencasExcludas,
+                        text: AppLocalizations.of(_appController.context!)!
+                            .loremIpsum2),
                     DuvidaListTile(
-                        title: 'Quais as vantagens do Nubank Vida?',
-                        text:
-                            'Lorem ipsum dolor sit amet, conse ctetur adipiscing elit.'),
+                        title: AppLocalizations.of(_appController.context!)!
+                            .quaisVantagens,
+                        text: AppLocalizations.of(_appController.context!)!
+                            .loremIpsum2),
                     SizedBox(
                       height: MediaQuery.of(context).viewPadding.bottom,
                     )

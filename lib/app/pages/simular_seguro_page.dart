@@ -14,6 +14,8 @@ import 'cobertura_page.dart';
 import 'home_modal/duvidas_content.dart';
 import 'view/default_view.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 final _appController = Modular.get<AppController>();
 
 GlobalKey<NavigatorState> modalNavigatorKey = GlobalKey<NavigatorState>();
@@ -143,7 +145,7 @@ class _SimularSeguroPageState extends State<SimularSeguroPage> {
                           children: [
                             SizedBox(height: 22.0),
                             Text(
-                              'Qual é a sua atividade profissional?',
+                              AppLocalizations.of(context)!.qualAtividade,
                               style: Theme.of(context)
                                   .textTheme
                                   .headline4
@@ -158,7 +160,8 @@ class _SimularSeguroPageState extends State<SimularSeguroPage> {
                             Opacity(
                               opacity: 0.8,
                               child: Text(
-                                  'Selecione sua profissão atual na lista abaixo. É importante selecionar a atividade correta, pois isso interfere na sua proposta e na validação do contrato.',
+                                  AppLocalizations.of(context)!
+                                      .qualAtividadeDescription,
                                   style: Theme.of(context)
                                       .textTheme
                                       .headline6
@@ -177,7 +180,7 @@ class _SimularSeguroPageState extends State<SimularSeguroPage> {
                     pinned: true,
                     floating: false,
                     delegate: SearchBarWidget(
-                        texto: 'Buscar "comerciante"',
+                        texto: AppLocalizations.of(context)!.buscarComerciante,
                         buscar: _buscar,
                         focus: _focus,
                         onChange: (value) =>
@@ -185,26 +188,21 @@ class _SimularSeguroPageState extends State<SimularSeguroPage> {
                 SliverToBoxAdapter(
                   child: SizedBox(height: 10.0),
                 ),
-                SliverToBoxAdapter(
-                  child: Observer(builder: (_) {
-                    return Column(
-                      children: _appController.filterAtividades
-                          .map(
-                            (item) => AtividadeListTile(
-                              value: item.value,
-                              title: item.title,
-                              groupValue: atividade,
-                              onChange: (value) {
-                                setState(() {
-                                  atividade = value;
-                                });
-                              },
-                            ),
-                          )
-                          .toList(),
+                SliverList(
+                  delegate: SliverChildBuilderDelegate(
+                      (BuildContext context, int index) {
+                    return AtividadeListTile(
+                      value: _appController.filterAtividades[index].value,
+                      title: _appController.filterAtividades[index].title,
+                      groupValue: atividade,
+                      onChange: (value) {
+                        setState(() {
+                          atividade = value;
+                        });
+                      },
                     );
-                  }),
-                ),
+                  }, childCount: _appController.filterAtividades.length),
+                )
               ],
             );
           })),

@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:intl/intl.dart';
-import 'package:seguros/app/components/cobertura_description.dart';
+import 'package:seguros/app/components/descriptions/cobertura_description.dart';
 import 'package:seguros/app/components/bottom_sheets/continuar_buttom.dart';
 import 'package:seguros/app/components/listtiles/custom_checkbox_listtile.dart';
 import 'package:seguros/app/components/custom_track_shape.dart';
@@ -12,12 +11,13 @@ import 'package:seguros/app/controllers/app_controller.dart';
 import 'package:seguros/app/models/atividade_model.dart';
 import 'package:seguros/app/pages/cobertura_modal/hospitalizacao_content.dart';
 import 'package:seguros/app/pages/cobertura_modal/invalidez_content.dart';
+import 'package:seguros/app/utils/converters.dart';
 
 import 'cobertura_modal/assistenciafuneral_content.dart';
 import 'cobertura_modal/assistenciafuneral_familiares_content.dart';
 import 'cobertura_modal/mortenatural_content.dart';
 
-final money = new NumberFormat("#,##0.00", "pt_br");
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 final _appController = Modular.get<AppController>();
 
@@ -113,7 +113,7 @@ class _CoberturaPageState extends State<CoberturaPage> {
                         children: [
                           SizedBox(height: 22.0),
                           Text(
-                            'Agora, escolha as coberturas do seu seguro',
+                            AppLocalizations.of(context)!.escolhaCobertura,
                             style: Theme.of(context)
                                 .textTheme
                                 .headline5
@@ -128,7 +128,8 @@ class _CoberturaPageState extends State<CoberturaPage> {
                           Opacity(
                             opacity: 0.8,
                             child: Text(
-                                'Valor da cobertura por morte do titular',
+                                AppLocalizations.of(context)!
+                                    .valorCoberturaMorteTitular,
                                 style: Theme.of(context)
                                     .textTheme
                                     .subtitle1
@@ -136,7 +137,8 @@ class _CoberturaPageState extends State<CoberturaPage> {
                           ),
                           SizedBox(height: 12.0),
                           Text(
-                            'R\$ ${money.format(_currentSliderValue)}',
+                            Converters().setReal(context) +
+                                '\$ ${Converters().moneyFormat(context).format(_currentSliderValue)}',
                             style: Theme.of(context)
                                 .textTheme
                                 .headline5
@@ -190,13 +192,15 @@ class _CoberturaPageState extends State<CoberturaPage> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text('R\$ 50 mil',
+                                Text(AppLocalizations.of(context)!.cinquentaMil,
                                     style: Theme.of(context)
                                         .textTheme
                                         .subtitle1
                                         ?.copyWith(
                                             fontWeight: FontWeight.w500)),
-                                Text('R\$ 150 mil',
+                                Text(
+                                    AppLocalizations.of(context)!
+                                        .centoCinquentaMil,
                                     style: Theme.of(context)
                                         .textTheme
                                         .subtitle1
@@ -216,20 +220,20 @@ class _CoberturaPageState extends State<CoberturaPage> {
                 child: Column(
                   children: [
                     CoberturaDescription(
-                        subtitle:
-                            'Para morte natural, há uma carência de 3 meses. Para morte acidental, não há carência.'
-                            '\n\nOs beneficiários são definidos nas próximas etapas.',
+                        subtitle: AppLocalizations.of(context)!
+                            .escolhaCoberturaDescription,
                         modalContent: MorteNaturalContent()),
                     CoberturaDescription(
-                        title: 'Assistência funeral do titular',
-                        subtitle:
-                            'R\$ 5.000,00 de cobertura para prestação do serviço funeral ou reembolso dos custos.',
+                        title: AppLocalizations.of(context)!
+                            .asssitenciaFuneralDoTitular,
+                        subtitle: AppLocalizations.of(context)!
+                            .asssitenciaFuneralDoTitularDescription,
                         valorAdicional: 0.00,
                         modalContent: AssistenciaFuneralContent()),
                     CoberturaDescription(
-                        title: 'Hospitalização',
-                        subtitle:
-                            'Caso sofra algum acidente e precise ficar no hospital por pelo menos 48h, você recebe uma diária de R\$ 150,00 para usar como quiser.',
+                        title: AppLocalizations.of(context)!.hospitalizacao,
+                        subtitle: AppLocalizations.of(context)!
+                            .hospitalizacaoDescription,
                         valorAdicional: 1.59,
                         switchWidget: Switch.adaptive(
                             activeColor:
@@ -247,9 +251,9 @@ class _CoberturaPageState extends State<CoberturaPage> {
                             }),
                         modalContent: HospitalizacaoContent()),
                     CoberturaDescription(
-                        title: 'Invalidez',
+                        title: AppLocalizations.of(context)!.invalidez,
                         subtitle:
-                            'Receba até 100% do valor da cobertura total do seu seguro no caso de invalidez total ou parcial por acidente.',
+                            AppLocalizations.of(context)!.invalidezDescription,
                         hasDivider: false,
                         valorAdicional: 3.03,
                         switchWidget: Switch.adaptive(
@@ -273,13 +277,15 @@ class _CoberturaPageState extends State<CoberturaPage> {
                       color: Colors.grey[200],
                     ),
                     CoberturaDescription(
-                        title: 'Assistência funeral de familiares',
-                        subtitle:
-                            'É possível escolher entre a prestação do serviço funeral ou reembolso dos custos de R\$ 5.000,00 de cobertura, para cada familiar.',
+                        title: AppLocalizations.of(context)!
+                            .asssitenciaFuneralDoFamiliares,
+                        subtitle: AppLocalizations.of(context)!
+                            .asssitenciaFuneralDoFamiliaresDescription,
                         hasDivider: false,
                         aditionalWidgets: [
                           CustomCheckBoxListTitle(
-                              title: 'Cônjuge e filhos',
+                              title:
+                                  AppLocalizations.of(context)!.conjugeFilhos,
                               valorAdicional: 1.02,
                               value: _funeralConjugeFilhos,
                               onChange: () {
@@ -294,7 +300,8 @@ class _CoberturaPageState extends State<CoberturaPage> {
                                 });
                               }),
                           CustomCheckBoxListTitle(
-                              title: 'Pais (do titular)',
+                              title:
+                                  AppLocalizations.of(context)!.paisDoTitular,
                               valorAdicional: 8.23,
                               value: _funeralPais,
                               onChange: () {

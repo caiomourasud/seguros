@@ -1,7 +1,11 @@
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+
 class Converters {
   simplifyString(String string) {
     return string
         .toLowerCase()
+        .replaceAll(' ', '')
         .replaceAll('á', 'a')
         .replaceAll('é', 'e')
         .replaceAll('í', 'i')
@@ -17,5 +21,13 @@ class Converters {
         .replaceAll('ü', 'u')
         .replaceAll('ñ', 'n')
         .replaceAll('ç', 'c');
+  }
+
+  setReal(context) {
+    return Localizations.localeOf(context).toString() == 'pt' ? 'R' : '';
+  }
+
+  NumberFormat moneyFormat(context) {
+    return NumberFormat("#,##0.00", Localizations.localeOf(context).toString());
   }
 }
