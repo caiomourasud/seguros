@@ -35,6 +35,9 @@ dev_dependencies:
 
 flutter:
 
+  assets:
+    - assets/json/atividades.json
+
   uses-material-design: true
   generate: true
 

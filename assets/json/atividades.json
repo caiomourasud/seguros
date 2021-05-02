@@ -1,0 +1,1952 @@
+[
+    {
+        "id": 1,
+        "titles": {
+            "pt": "Administrador(a)",
+            "en": "Administrator",
+            "es": "Administrador"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 2,
+        "titles": {
+            "pt": "Administrador(a) de ONG",
+            "en": "NGO Administrator",
+            "es": "Administrador de ONG"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 3,
+        "titles": {
+            "pt": "Advogado(a)",
+            "en": "Lawyer",
+            "es": "Abogado"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 4,
+        "titles": {
+            "pt": "Analista",
+            "en": "Analista",
+            "es": "Analista"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 5,
+        "titles": {
+            "pt": "Aposentado(a)",
+            "en": "Retired",
+            "es": "Retirado"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 6,
+        "titles": {
+            "pt": "Arquiteto(a)",
+            "en": "Architect",
+            "es": "Arquitecto"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 7,
+        "titles": {
+            "pt": "Artesão(ã), Artista plástico(a)",
+            "en": "Craftsman, Plastic artist",
+            "es": "Artesano, Artista plástico"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 8,
+        "titles": {
+            "pt": "Assistente",
+            "en": "Assistant",
+            "es": "Asistente"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 9,
+        "titles": {
+            "pt": "Assistente social",
+            "en": "Social worker",
+            "es": "Asistente social"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 10,
+        "titles": {
+            "pt": "Atendente",
+            "en": "Clerk",
+            "es": "Empleado"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 11,
+        "titles": {
+            "pt": "Atleta",
+            "en": "Athlete",
+            "es": "Atleta"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 12,
+        "titles": {
+            "pt": "Ator, Atriz",
+            "en": "Actor, actress",
+            "es": "Actor, Actriz"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 13,
+        "titles": {
+            "pt": "Auditor(a)",
+            "en": "Auditor",
+            "es": "Auditor"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 14,
+        "titles": {
+            "pt": "Autônomo(a) vinculado(a) a APP",
+            "en": "Self-employed linked to APP",
+            "es": "Autónomo vinculado a APP"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 15,
+        "titles": {
+            "pt": "Auxiliar",
+            "en": "Assistant",
+            "es": "Asistente"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 16,
+        "titles": {
+            "pt": "Bancário(a)",
+            "en": "Banking",
+            "es": "Bancario"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 17,
+        "titles": {
+            "pt": "Biomédico(a)",
+            "en": "Biomedical",
+            "es": "Biomédico"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 18,
+        "titles": {
+            "pt": "Biólogo(a)",
+            "en": "Biologist",
+            "es": "Biólogo"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 19,
+        "titles": {
+            "pt": "Bombeiro(a), Salva-vidas",
+            "en": "Firefighter, Lifeguard",
+            "es": "Bombeiro(a), Salvavidas"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 20,
+        "titles": {
+            "pt": "Cabeleireiro(a), Manicure, Esteticista",
+            "en": "Hairdresser, Manicure, Beautician",
+            "es": "Peluquero, Manicura, Esteticista"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 21,
+        "titles": {
+            "pt": "Camareiro(a)",
+            "en": "Chamberlain",
+            "es": "Chambelán"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 22,
+        "titles": {
+            "pt": "Comerciário(a)",
+            "en": "Employee",
+            "es": "Empleado"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 23,
+        "titles": {
+            "pt": "Consultor(a)",
+            "en": "Consultant",
+            "es": "Consultor"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 24,
+        "titles": {
+            "pt": "Contador(a)",
+            "en": "Accountant",
+            "es": "Contador"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 25,
+        "titles": {
+            "pt": "Corretor(a)",
+            "en": "Broker",
+            "es": "Corredor"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 26,
+        "titles": {
+            "pt": "Corretor(a) de imóvel",
+            "en": "Property Broker",
+            "es": "Agente inmobiliario"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 27,
+        "titles": {
+            "pt": "Cozinheiro(a), Chef",
+            "en": "Cook, Chef",
+            "es": "Chef de cocina"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 28,
+        "titles": {
+            "pt": "Dançarino(a)",
+            "en": "Dancer",
+            "es": "Bailarín"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 29,
+        "titles": {
+            "pt": "Decorador(a)",
+            "en": "Decorator",
+            "es": "Decorador"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 30,
+        "titles": {
+            "pt": "Dentista",
+            "en": "Dentist",
+            "es": "Dentista"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 31,
+        "titles": {
+            "pt": "Desenvolvedor(a) de software",
+            "en": "Software developer",
+            "es": "Desarrollador de software"
+        },
+        "values": {
+            "value50": 5.82,
+            "value75": 7.16,
+            "value100": 8.16,
+            "value125": 10.10,
+            "value150": 12.04
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.88,
+                "value75": 1.59,
+                "value100": 1.38
+            },
+            "invalidez": {
+                "value50": 2.39,
+                "value75": 3.03,
+                "value100": 3.51,
+                "value125": 4.39,
+                "value150": 5.27
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.20,
+                "value75": 1.02,
+                "value100": 0.88
+            },
+            "funeral_pais": {
+                "value50": 9.71,
+                "value75": 8.23,
+                "value100": 7.15
+            }
+        }
+    },
+    {
+        "id": 32,
+        "titles": {
+            "pt": "Designer",
+            "en": "Designer",
+            "es": "Diseñador"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 33,
+        "titles": {
+            "pt": "Despachante aduaneiro",
+            "en": "Custom broker",
+            "es": "Despachante de aduanas"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 34,
+        "titles": {
+            "pt": "Detetive profissional",
+            "en": "Professional Detective",
+            "es": "Detective profesional"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 35,
+        "titles": {
+            "pt": "Diretor(a), Gestor(a)",
+            "en": "Director, Manager",
+            "es": "Director, gerente"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 36,
+        "titles": {
+            "pt": "Economista",
+            "en": "Economist",
+            "es": "Economista"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 37,
+        "titles": {
+            "pt": "Eletricista",
+            "en": "Electrician",
+            "es": "Electricista"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 38,
+        "titles": {
+            "pt": "Empresário(a)",
+            "en": "Businessman",
+            "es": "Empresario"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 39,
+        "titles": {
+            "pt": "Encanador(a)",
+            "en": "Plumber",
+            "es": "Fontanero"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 40,
+        "titles": {
+            "pt": "Enfermeiro(a)",
+            "en": "Nurse",
+            "es": "Enfermero"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 41,
+        "titles": {
+            "pt": "Engenheiro(a)",
+            "en": "Engineer",
+            "es": "Ingeniero"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 42,
+        "titles": {
+            "pt": "Escritor(a)",
+            "en": "Writer",
+            "es": "Escritor"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 43,
+        "titles": {
+            "pt": "Estilista, Costureiro(a)",
+            "en": "Fashion Designer, Sewing & Alterations",
+            "es": "Diseñador de moda, Costura y alteraciones"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 44,
+        "titles": {
+            "pt": "Estudante",
+            "en": "Student",
+            "es": "Estudiante"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 45,
+        "titles": {
+            "pt": "Farmacêutico(a)",
+            "en": "Pharmacist",
+            "es": "Farmacéutico"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 46,
+        "titles": {
+            "pt": "Fisioterapeuta",
+            "en": "Physiotherapist",
+            "es": "Fisioterapeuta"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 47,
+        "titles": {
+            "pt": "Fonoaudiólogo(a)",
+            "en": "Speech therapist",
+            "es": "Logopeda"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 48,
+        "titles": {
+            "pt": "Fotógrafo(a)",
+            "en": "Photographer",
+            "es": "Fotógrafo"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 49,
+        "titles": {
+            "pt": "Funcionário(a) público(a)",
+            "en": "Public official",
+            "es": "Oficial público"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    },
+    {
+        "id": 50,
+        "titles": {
+            "pt": "Físico(a)",
+            "en": "Physical",
+            "es": "Físico"
+        },
+        "values": {
+            "value50": 7.5,
+            "value75": 7.5,
+            "value100": 7.5,
+            "value125": 7.5,
+            "value150": 7.5
+        },
+        "taxas": {
+            "hospitalizacao": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "invalidez": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5,
+                "value125": 1.5,
+                "value150": 1.5
+            },
+            "funeral_conjuge_filhos": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            },
+            "funeral_pais": {
+                "value50": 1.5,
+                "value75": 1.5,
+                "value100": 1.5
+            }
+        }
+    }
+]

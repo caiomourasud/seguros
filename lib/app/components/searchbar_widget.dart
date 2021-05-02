@@ -21,9 +21,9 @@ class SearchBarWidget extends SliverPersistentHeaderDelegate {
           color: Theme.of(context).scaffoldBackgroundColor,
           boxShadow: <BoxShadow>[
             BoxShadow(
-              offset: Offset(0.0, 0.0),
-              blurRadius: overlapsContent ? 4.0 : 0.0,
-              spreadRadius: -1.0,
+              offset: overlapsContent ? Offset(0.0, 3.0) : Offset(0.0, 0.0),
+              blurRadius: overlapsContent ? 3.0 : 0.0,
+              spreadRadius: -2.8,
               color: Colors.black54,
             ),
           ],

@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:intl/intl.dart';
+import 'package:seguros/app/components/custom_appbar.dart';
 import 'package:seguros/app/components/listtiles/duvida_listtile.dart';
 import 'package:seguros/app/controllers/app_controller.dart';
+import 'package:seguros/app/models/atividade_model.dart';
 import 'package:seguros/app/utils/converters.dart';
 
 import 'contratar_page.dart';
@@ -13,12 +15,10 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 final _appController = Modular.get<AppController>();
 
-GlobalKey<NavigatorState> modalNavigatorKey = GlobalKey<NavigatorState>();
-
 class FormaPagamentoPage extends StatefulWidget {
+  final AtividadeModel atividade;
   final double valor;
   final double cobertura;
-  final double valorCobertura;
   final bool hospitalizacao;
   final bool invalidez;
   final bool funeralConjugeFilhos;
@@ -26,9 +26,9 @@ class FormaPagamentoPage extends StatefulWidget {
 
   const FormaPagamentoPage(
       {Key? key,
+      required this.atividade,
       required this.valor,
       required this.cobertura,
-      required this.valorCobertura,
       required this.hospitalizacao,
       required this.invalidez,
       required this.funeralConjugeFilhos,
@@ -45,34 +45,7 @@ class _FormaPagamentoPageState extends State<FormaPagamentoPage> {
       child: Scaffold(
           body: CustomScrollView(
         slivers: [
-          SliverAppBar(
-            pinned: true,
-            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-            leading: MouseRegion(
-              cursor: SystemMouseCursors.click,
-              child: CupertinoButton(
-                  padding: EdgeInsets.all(4.0),
-                  borderRadius: BorderRadius.circular(50.0),
-                  color: Colors.transparent,
-                  child: Icon(CupertinoIcons.chevron_back,
-                      size: 28, color: Colors.grey[600]),
-                  onPressed: () => Navigator.of(context).pop()),
-            ),
-            title: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
-              child: LinearProgressIndicator(
-                minHeight: 2.5,
-                value: 0.75,
-                backgroundColor: Colors.grey[300],
-              ),
-            ),
-            actions: [
-              Padding(
-                padding: const EdgeInsets.only(left: 12.0, right: 8.0),
-                child: SizedBox(width: 36.0),
-              )
-            ],
-          ),
+          CustomSliverAppBar(value: 0.75),
           SliverToBoxAdapter(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -114,11 +87,11 @@ class _FormaPagamentoPageState extends State<FormaPagamentoPage> {
                       Navigator.push(_appController.context!,
                           CupertinoPageRoute(builder: (context) {
                         return ContratarPage(
+                            atividade: widget.atividade,
                             valor: widget.valor,
                             formaPagamento:
                                 AppLocalizations.of(context)!.cartaoCredito,
                             cobertura: widget.cobertura,
-                            valorCobertura: widget.valorCobertura,
                             hospitalizacao: widget.hospitalizacao,
                             invalidez: widget.invalidez,
                             funeralConjugeFilhos: widget.funeralConjugeFilhos,
@@ -136,11 +109,11 @@ class _FormaPagamentoPageState extends State<FormaPagamentoPage> {
                       Navigator.push(_appController.context!,
                           CupertinoPageRoute(builder: (context) {
                         return ContratarPage(
+                            atividade: widget.atividade,
                             valor: widget.valor,
                             formaPagamento:
                                 AppLocalizations.of(context)!.contaNubank,
                             cobertura: widget.cobertura,
-                            valorCobertura: widget.valorCobertura,
                             hospitalizacao: widget.hospitalizacao,
                             invalidez: widget.invalidez,
                             funeralConjugeFilhos: widget.funeralConjugeFilhos,

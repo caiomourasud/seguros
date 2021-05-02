@@ -1,21 +1,26 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:intl/intl.dart';
 import 'package:seguros/app/components/bottom_sheets/contratar_buttom.dart';
+import 'package:seguros/app/components/custom_appbar.dart';
 import 'package:seguros/app/components/listtiles/contratar_listtile.dart';
 import 'package:seguros/app/components/listtiles/contratar_value_listtile.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:seguros/app/controllers/cobertura_controller.dart';
+import 'package:seguros/app/models/atividade_model.dart';
 import 'package:seguros/app/utils/converters.dart';
 
+final _coberturaController = Modular.get<CoberturaController>();
 GlobalKey<NavigatorState> modalNavigatorKey = GlobalKey<NavigatorState>();
 
 class ContratarPage extends StatefulWidget {
+  final AtividadeModel atividade;
   final double valor;
   final String formaPagamento;
   final double cobertura;
-  final double valorCobertura;
   final bool hospitalizacao;
   final bool invalidez;
   final bool funeralConjugeFilhos;
@@ -23,10 +28,10 @@ class ContratarPage extends StatefulWidget {
 
   const ContratarPage(
       {Key? key,
+      required this.atividade,
       required this.valor,
       required this.formaPagamento,
       required this.cobertura,
-      required this.valorCobertura,
       required this.hospitalizacao,
       required this.invalidez,
       required this.funeralConjugeFilhos,
@@ -44,34 +49,7 @@ class _ContratarPageState extends State<ContratarPage> {
           bottomSheet: ContratarButton(),
           body: CustomScrollView(
             slivers: [
-              SliverAppBar(
-                pinned: true,
-                backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-                leading: MouseRegion(
-                  cursor: SystemMouseCursors.click,
-                  child: CupertinoButton(
-                      padding: EdgeInsets.all(4.0),
-                      borderRadius: BorderRadius.circular(50.0),
-                      color: Colors.transparent,
-                      child: Icon(CupertinoIcons.chevron_back,
-                          size: 28, color: Colors.grey[600]),
-                      onPressed: () => Navigator.of(context).pop()),
-                ),
-                title: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: LinearProgressIndicator(
-                    minHeight: 2.5,
-                    value: 1.0,
-                    backgroundColor: Colors.grey[300],
-                  ),
-                ),
-                actions: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 12.0, right: 8.0),
-                    child: SizedBox(width: 36.0),
-                  )
-                ],
-              ),
+              CustomSliverAppBar(value: 1.0),
               SliverToBoxAdapter(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -167,7 +145,7 @@ class _ContratarPageState extends State<ContratarPage> {
                       text: Converters().setReal(context) +
                           '\$ ${Converters().moneyFormat(context).format(widget.cobertura)}',
                       trailing: Converters().setReal(context) +
-                          '\$ ${Converters().moneyFormat(context).format(widget.valorCobertura)}',
+                          '\$ ${Converters().moneyFormat(context).format(_coberturaController.setValue(cobertura: widget.cobertura.toString(), values: widget.atividade.values!))}',
                     ),
                     ContratarListTile(
                       title: AppLocalizations.of(context)!
@@ -204,7 +182,7 @@ class _ContratarPageState extends State<ContratarPage> {
                         text: AppLocalizations.of(context)!
                             .hospitalizacaoDescription,
                         trailing: Converters().setReal(context) +
-                            '\$ ${Converters().moneyFormat(context).format(1.59)}',
+                            '\$ ${Converters().moneyFormat(context).format(_coberturaController.setSimpleValue(cobertura: widget.cobertura.toString(), values: widget.atividade.taxas!.hospitalizacao!))}',
                       ),
                     if (widget.invalidez)
                       ContratarListTile(
@@ -212,7 +190,7 @@ class _ContratarPageState extends State<ContratarPage> {
                         text:
                             AppLocalizations.of(context)!.invalidezDescription,
                         trailing: Converters().setReal(context) +
-                            '\$ ${Converters().moneyFormat(context).format(3.03)}',
+                            '\$ ${Converters().moneyFormat(context).format(_coberturaController.setValue(cobertura: widget.cobertura.toString(), values: widget.atividade.taxas!.invalidez!))}',
                       ),
                     if (widget.funeralConjugeFilhos || widget.funeralPais)
                       ContratarListTile(
@@ -221,17 +199,17 @@ class _ContratarPageState extends State<ContratarPage> {
                         text: AppLocalizations.of(context)!
                             .asssitenciaFuneralDoFamiliaresDescription,
                         trailing: Converters().setReal(context) +
-                            '\$ ${Converters().moneyFormat(context).format(0.0 + (widget.funeralConjugeFilhos ? 1.02 : 0.0) + (widget.funeralPais ? 8.23 : 0.0))}',
+                            '\$ ${Converters().moneyFormat(context).format(0.0 + (widget.funeralConjugeFilhos ? _coberturaController.setSimpleValue(cobertura: widget.cobertura.toString(), values: widget.atividade.taxas!.funeralConjugeFilhos!) : 0.0) + (widget.funeralPais ? _coberturaController.setSimpleValue(cobertura: widget.cobertura.toString(), values: widget.atividade.taxas!.funeralPais!) : 0.0))}',
                       ),
                     ContratarValueListTile(
                       text: AppLocalizations.of(context)!.valorLiquido,
                       trailing: Converters().setReal(context) +
-                          '\$ ${Converters().moneyFormat(context).format(widget.valor - 0.08)}',
+                          '\$ ${Converters().moneyFormat(context).format(widget.valor - widget.valor * 0.005)}',
                     ),
                     ContratarValueListTile(
                       text: AppLocalizations.of(context)!.valorIOF,
                       trailing: Converters().setReal(context) +
-                          '\$ ${Converters().moneyFormat(context).format(0.08)}',
+                          '\$ ${Converters().moneyFormat(context).format(widget.valor * 0.005)}',
                     ),
                     ContratarValueListTile(
                       text: AppLocalizations.of(context)!.pagamentoMensal,
