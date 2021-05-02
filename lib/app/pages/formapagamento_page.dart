@@ -17,22 +17,8 @@ final _appController = Modular.get<AppController>();
 
 class FormaPagamentoPage extends StatefulWidget {
   final AtividadeModel atividade;
-  final double valor;
-  final double cobertura;
-  final bool hospitalizacao;
-  final bool invalidez;
-  final bool funeralConjugeFilhos;
-  final bool funeralPais;
 
-  const FormaPagamentoPage(
-      {Key? key,
-      required this.atividade,
-      required this.valor,
-      required this.cobertura,
-      required this.hospitalizacao,
-      required this.invalidez,
-      required this.funeralConjugeFilhos,
-      required this.funeralPais})
+  const FormaPagamentoPage({Key? key, required this.atividade})
       : super(key: key);
   @override
   _FormaPagamentoPageState createState() => _FormaPagamentoPageState();
@@ -88,14 +74,8 @@ class _FormaPagamentoPageState extends State<FormaPagamentoPage> {
                           CupertinoPageRoute(builder: (context) {
                         return ContratarPage(
                             atividade: widget.atividade,
-                            valor: widget.valor,
                             formaPagamento:
-                                AppLocalizations.of(context)!.cartaoCredito,
-                            cobertura: widget.cobertura,
-                            hospitalizacao: widget.hospitalizacao,
-                            invalidez: widget.invalidez,
-                            funeralConjugeFilhos: widget.funeralConjugeFilhos,
-                            funeralPais: widget.funeralPais);
+                                AppLocalizations.of(context)!.cartaoCredito);
                       }));
                     }),
                 DuvidaListTile(
@@ -110,14 +90,8 @@ class _FormaPagamentoPageState extends State<FormaPagamentoPage> {
                           CupertinoPageRoute(builder: (context) {
                         return ContratarPage(
                             atividade: widget.atividade,
-                            valor: widget.valor,
                             formaPagamento:
-                                AppLocalizations.of(context)!.contaNubank,
-                            cobertura: widget.cobertura,
-                            hospitalizacao: widget.hospitalizacao,
-                            invalidez: widget.invalidez,
-                            funeralConjugeFilhos: widget.funeralConjugeFilhos,
-                            funeralPais: widget.funeralPais);
+                                AppLocalizations.of(context)!.contaNubank);
                       }));
                     }),
                 SizedBox(height: 22.0),

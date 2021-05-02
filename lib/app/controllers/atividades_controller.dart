@@ -6,15 +6,15 @@ import 'package:seguros/app/repositories/atividades_repository.dart';
 import 'package:seguros/app/utils/converters.dart';
 
 import 'app_controller.dart';
-part 'simular_seguro_controller.g.dart';
+part 'atividades_controller.g.dart';
 
 final _appController = Modular.get<AppController>();
 final _atividadesRepository = AtividadesRepositiry();
 
-class SimularSeguroController = _SimularSeguroControllerBase
-    with _$SimularSeguroController;
+class AtividadesController = _AtividadesControllerBase
+    with _$AtividadesController;
 
-abstract class _SimularSeguroControllerBase with Store {
+abstract class _AtividadesControllerBase with Store {
   @observable
   FocusNode focus = FocusNode();
 

@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:seguros/app/controllers/app_controller.dart';
-import 'package:seguros/app/pages/simular_seguro_page.dart';
+import 'package:seguros/app/pages/atividades_page.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 

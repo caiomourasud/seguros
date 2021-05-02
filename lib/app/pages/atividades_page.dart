@@ -9,14 +9,15 @@ import 'package:seguros/app/components/custom_appbar.dart';
 import 'package:seguros/app/components/listtiles/atividade_listtille.dart';
 import 'package:seguros/app/components/searchbar_widget.dart';
 import 'package:seguros/app/controllers/app_controller.dart';
-import 'package:seguros/app/controllers/simular_seguro_controller.dart';
+import 'package:seguros/app/controllers/atividades_controller.dart';
+import 'package:seguros/app/models/atividade_model.dart';
 
 import 'cobertura_page.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 final _appController = Modular.get<AppController>();
-final _simularSeguroController = Modular.get<SimularSeguroController>();
+final _atividadesController = Modular.get<AtividadesController>();
 
 late ScrollController _scrollController;
 double _scrollPosition = 0.0;
@@ -29,7 +30,7 @@ class SimularSeguroPage extends StatefulWidget {
 }
 
 class _SimularSeguroPageState extends State<SimularSeguroPage> {
-  int atividade = 0;
+  int atividadeId = 0;
 
   @override
   void initState() {
@@ -38,9 +39,9 @@ class _SimularSeguroPageState extends State<SimularSeguroPage> {
     _scrollController = ScrollController();
     _focus.addListener(_onFocusChange);
     _scrollController.addListener(_scrollListener);
-    _simularSeguroController.atividades = [];
+    _atividadesController.atividades = [];
     Timer(Duration(milliseconds: 300), () {
-      _simularSeguroController.getAtividades();
+      _atividadesController.getAtividades();
     });
 
     super.initState();
@@ -50,7 +51,7 @@ class _SimularSeguroPageState extends State<SimularSeguroPage> {
   void dispose() {
     _focus.dispose();
     _buscar.dispose();
-    _simularSeguroController.setSearchText('');
+    _atividadesController.setSearchText('');
     super.dispose();
   }
 
@@ -59,51 +60,60 @@ class _SimularSeguroPageState extends State<SimularSeguroPage> {
   }
 
   _onFocusChange() {
-    _simularSeguroController.setFocus(_focus.hasFocus);
+    _atividadesController.setFocus(_focus.hasFocus);
+  }
+
+  AtividadeModel getById(int id) {
+    if (id == 0) {
+      return AtividadeModel();
+    } else {
+      var atividade = _atividadesController.atividades
+          .where((atividade) => atividade.id == id);
+      return atividade.first;
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Observer(builder: (_) {
-      return _simularSeguroController.atividades.isEmpty
+      return _atividadesController.atividades.isEmpty
           ? Material(child: Center(child: CircularProgressIndicator()))
           : GestureDetector(
               onTap: () => FocusScope.of(context).unfocus(),
               child: Scaffold(
                   floatingActionButton: FloatingActionButton(
-                      backgroundColor: atividade == 0 ? Colors.grey[350] : null,
+                      backgroundColor:
+                          atividadeId == 0 ? Colors.grey[350] : null,
                       elevation: 0.0,
                       highlightElevation: 0.0,
                       focusElevation: 0.0,
                       child: Icon(Icons.arrow_forward_rounded,
-                          color: atividade == 0 ? Colors.grey[500] : null,
+                          color: atividadeId == 0 ? Colors.grey[500] : null,
                           size: 28),
-                      onPressed: atividade == 0
+                      onPressed: atividadeId == 0
                           ? null
                           : () => Navigator.push(_appController.context!,
                                   CupertinoPageRoute(builder: (context) {
                                 return CoberturaPage(
-                                    atividade: _simularSeguroController
-                                        .atividades[atividade - 1]);
+                                    atividade: getById(atividadeId));
                               }))),
                   body: Observer(builder: (_) {
                     return CustomScrollView(
                       controller: _scrollController,
-                      physics: _simularSeguroController.onFocus &&
+                      physics: _atividadesController.onFocus &&
                               _scrollPosition <
                                   (MediaQuery.of(context).size.height * 0.2)
                           ? ClampingScrollPhysics()
                           : AlwaysScrollableScrollPhysics(),
                       slivers: [
-                        CustomSliverAppBar(value: 0.25),
+                        CustomSliverAppBar(value: 0.25, hasShadow: false),
                         SliverPadding(
                           padding: const EdgeInsets.symmetric(horizontal: 22.0),
                           sliver: SliverToBoxAdapter(
                             child: Observer(builder: (_) {
                               return AnimatedContainer(
-                                height: _simularSeguroController.onFocus
-                                    ? 0.0
-                                    : null,
+                                height:
+                                    _atividadesController.onFocus ? 0.0 : null,
                                 duration: Duration(milliseconds: 1000),
                                 child: Column(
                                   children: [
@@ -149,7 +159,7 @@ class _SimularSeguroPageState extends State<SimularSeguroPage> {
                                     .buscarComerciante,
                                 buscar: _buscar,
                                 focus: _focus,
-                                onChange: (value) => _simularSeguroController
+                                onChange: (value) => _atividadesController
                                     .setSearchText(value))),
                         SliverToBoxAdapter(
                           child: SizedBox(height: 10.0),
@@ -158,21 +168,21 @@ class _SimularSeguroPageState extends State<SimularSeguroPage> {
                           delegate: SliverChildBuilderDelegate(
                               (BuildContext context, int index) {
                             return AtividadeListTile(
-                              value: _simularSeguroController
+                              value: _atividadesController
                                   .filterAtividades[index].id!,
-                              title: _simularSeguroController.setTitle(
+                              title: _atividadesController.setTitle(
                                   context: context,
-                                  titles: _simularSeguroController
+                                  titles: _atividadesController
                                       .filterAtividades[index].titles!),
-                              groupValue: atividade,
+                              groupValue: atividadeId,
                               onChange: (value) {
                                 setState(() {
-                                  atividade = value;
+                                  atividadeId = value;
                                 });
                               },
                             );
                           },
-                              childCount: _simularSeguroController
+                              childCount: _atividadesController
                                   .filterAtividades.length),
                         )
                       ],

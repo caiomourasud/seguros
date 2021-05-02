@@ -18,24 +18,10 @@ GlobalKey<NavigatorState> modalNavigatorKey = GlobalKey<NavigatorState>();
 
 class ContratarPage extends StatefulWidget {
   final AtividadeModel atividade;
-  final double valor;
   final String formaPagamento;
-  final double cobertura;
-  final bool hospitalizacao;
-  final bool invalidez;
-  final bool funeralConjugeFilhos;
-  final bool funeralPais;
 
   const ContratarPage(
-      {Key? key,
-      required this.atividade,
-      required this.valor,
-      required this.formaPagamento,
-      required this.cobertura,
-      required this.hospitalizacao,
-      required this.invalidez,
-      required this.funeralConjugeFilhos,
-      required this.funeralPais})
+      {Key? key, required this.atividade, required this.formaPagamento})
       : super(key: key);
   @override
   _ContratarPageState createState() => _ContratarPageState();
@@ -61,7 +47,7 @@ class _ContratarPageState extends State<ContratarPage> {
                         AppLocalizations.of(context)!.voceVaiPagar +
                             '\n' +
                             Converters().setReal(context) +
-                            '\$ ${Converters().moneyFormat(context).format(widget.valor)} / ' +
+                            '\$ ${Converters().moneyFormat(context).format(_coberturaController.valorTotal)} / ' +
                             AppLocalizations.of(context)!.mes,
                         style: Theme.of(context).textTheme.headline5?.copyWith(
                             fontSize: 31,
@@ -143,9 +129,9 @@ class _ContratarPageState extends State<ContratarPage> {
                     ContratarListTile(
                       title: AppLocalizations.of(context)!.valorCobertura,
                       text: Converters().setReal(context) +
-                          '\$ ${Converters().moneyFormat(context).format(widget.cobertura)}',
+                          '\$ ${Converters().moneyFormat(context).format(_coberturaController.cobertura)}',
                       trailing: Converters().setReal(context) +
-                          '\$ ${Converters().moneyFormat(context).format(_coberturaController.setValue(cobertura: widget.cobertura.toString(), values: widget.atividade.values!))}',
+                          '\$ ${Converters().moneyFormat(context).format(_coberturaController.setValue(cobertura: _coberturaController.cobertura.toString(), values: widget.atividade.values!))}',
                     ),
                     ContratarListTile(
                       title: AppLocalizations.of(context)!
@@ -154,10 +140,10 @@ class _ContratarPageState extends State<ContratarPage> {
                           .asssitenciaFuneralDoTitularDescription,
                     ),
                     SizedBox(height: 22.0),
-                    if (widget.hospitalizacao ||
-                        widget.invalidez ||
-                        widget.funeralConjugeFilhos ||
-                        widget.funeralPais)
+                    if (_coberturaController.hospitalizacao ||
+                        _coberturaController.invalidez ||
+                        _coberturaController.funeralConjugeFilhos ||
+                        _coberturaController.funeralPais)
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 22.0),
                         child: Opacity(
@@ -171,50 +157,51 @@ class _ContratarPageState extends State<ContratarPage> {
                                       fontWeight: FontWeight.w500)),
                         ),
                       ),
-                    if (widget.hospitalizacao ||
-                        widget.invalidez ||
-                        widget.funeralConjugeFilhos ||
-                        widget.funeralPais)
+                    if (_coberturaController.hospitalizacao ||
+                        _coberturaController.invalidez ||
+                        _coberturaController.funeralConjugeFilhos ||
+                        _coberturaController.funeralPais)
                       SizedBox(height: 22.0),
-                    if (widget.hospitalizacao)
+                    if (_coberturaController.hospitalizacao)
                       ContratarListTile(
                         title: AppLocalizations.of(context)!.hospitalizacao,
                         text: AppLocalizations.of(context)!
                             .hospitalizacaoDescription,
                         trailing: Converters().setReal(context) +
-                            '\$ ${Converters().moneyFormat(context).format(_coberturaController.setSimpleValue(cobertura: widget.cobertura.toString(), values: widget.atividade.taxas!.hospitalizacao!))}',
+                            '\$ ${Converters().moneyFormat(context).format(_coberturaController.setSimpleValue(cobertura: _coberturaController.cobertura.toString(), values: widget.atividade.taxas!.hospitalizacao!))}',
                       ),
-                    if (widget.invalidez)
+                    if (_coberturaController.invalidez)
                       ContratarListTile(
                         title: AppLocalizations.of(context)!.invalidez,
                         text:
                             AppLocalizations.of(context)!.invalidezDescription,
                         trailing: Converters().setReal(context) +
-                            '\$ ${Converters().moneyFormat(context).format(_coberturaController.setValue(cobertura: widget.cobertura.toString(), values: widget.atividade.taxas!.invalidez!))}',
+                            '\$ ${Converters().moneyFormat(context).format(_coberturaController.setValue(cobertura: _coberturaController.cobertura.toString(), values: widget.atividade.taxas!.invalidez!))}',
                       ),
-                    if (widget.funeralConjugeFilhos || widget.funeralPais)
+                    if (_coberturaController.funeralConjugeFilhos ||
+                        _coberturaController.funeralPais)
                       ContratarListTile(
                         title: AppLocalizations.of(context)!
                             .asssitenciaFuneralDoFamiliares,
                         text: AppLocalizations.of(context)!
                             .asssitenciaFuneralDoFamiliaresDescription,
                         trailing: Converters().setReal(context) +
-                            '\$ ${Converters().moneyFormat(context).format(0.0 + (widget.funeralConjugeFilhos ? _coberturaController.setSimpleValue(cobertura: widget.cobertura.toString(), values: widget.atividade.taxas!.funeralConjugeFilhos!) : 0.0) + (widget.funeralPais ? _coberturaController.setSimpleValue(cobertura: widget.cobertura.toString(), values: widget.atividade.taxas!.funeralPais!) : 0.0))}',
+                            '\$ ${Converters().moneyFormat(context).format(0.0 + (_coberturaController.funeralConjugeFilhos ? _coberturaController.setSimpleValue(cobertura: _coberturaController.cobertura.toString(), values: widget.atividade.taxas!.funeralConjugeFilhos!) : 0.0) + (_coberturaController.funeralPais ? _coberturaController.setSimpleValue(cobertura: _coberturaController.cobertura.toString(), values: widget.atividade.taxas!.funeralPais!) : 0.0))}',
                       ),
                     ContratarValueListTile(
                       text: AppLocalizations.of(context)!.valorLiquido,
                       trailing: Converters().setReal(context) +
-                          '\$ ${Converters().moneyFormat(context).format(widget.valor - widget.valor * 0.005)}',
+                          '\$ ${Converters().moneyFormat(context).format(_coberturaController.valorTotal - _coberturaController.valorTotal * 0.005)}',
                     ),
                     ContratarValueListTile(
                       text: AppLocalizations.of(context)!.valorIOF,
                       trailing: Converters().setReal(context) +
-                          '\$ ${Converters().moneyFormat(context).format(widget.valor * 0.005)}',
+                          '\$ ${Converters().moneyFormat(context).format(_coberturaController.valorTotal * 0.005)}',
                     ),
                     ContratarValueListTile(
                       text: AppLocalizations.of(context)!.pagamentoMensal,
                       trailing: Converters().setReal(context) +
-                          '\$ ${Converters().moneyFormat(context).format(widget.valor)}',
+                          '\$ ${Converters().moneyFormat(context).format(_coberturaController.valorTotal)}',
                       isBold: true,
                     ),
                   ],
@@ -232,7 +219,7 @@ class _ContratarPageState extends State<ContratarPage> {
                         child: Text(
                             AppLocalizations.of(context)!.incluso40 +
                                 Converters().setReal(context) +
-                                '\$ ${Converters().moneyFormat(context).format(widget.valor * 0.4)}.',
+                                '\$ ${Converters().moneyFormat(context).format(_coberturaController.valorTotal * 0.4)}.',
                             style: Theme.of(context)
                                 .textTheme
                                 .subtitle1

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'simular_seguro_controller.dart';
+part of 'atividades_controller.dart';
 
 // **************************************************************************
 // StoreGenerator
@@ -8,16 +8,16 @@ part of 'simular_seguro_controller.dart';
 
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
-mixin _$SimularSeguroController on _SimularSeguroControllerBase, Store {
+mixin _$AtividadesController on _AtividadesControllerBase, Store {
   Computed<List<AtividadeModel>>? _$filterAtividadesComputed;
 
   @override
   List<AtividadeModel> get filterAtividades => (_$filterAtividadesComputed ??=
           Computed<List<AtividadeModel>>(() => super.filterAtividades,
-              name: '_SimularSeguroControllerBase.filterAtividades'))
+              name: '_AtividadesControllerBase.filterAtividades'))
       .value;
 
-  final _$focusAtom = Atom(name: '_SimularSeguroControllerBase.focus');
+  final _$focusAtom = Atom(name: '_AtividadesControllerBase.focus');
 
   @override
   FocusNode get focus {
@@ -32,7 +32,7 @@ mixin _$SimularSeguroController on _SimularSeguroControllerBase, Store {
     });
   }
 
-  final _$onFocusAtom = Atom(name: '_SimularSeguroControllerBase.onFocus');
+  final _$onFocusAtom = Atom(name: '_AtividadesControllerBase.onFocus');
 
   @override
   bool get onFocus {
@@ -47,8 +47,7 @@ mixin _$SimularSeguroController on _SimularSeguroControllerBase, Store {
     });
   }
 
-  final _$searchTextAtom =
-      Atom(name: '_SimularSeguroControllerBase.searchText');
+  final _$searchTextAtom = Atom(name: '_AtividadesControllerBase.searchText');
 
   @override
   String get searchText {
@@ -63,8 +62,7 @@ mixin _$SimularSeguroController on _SimularSeguroControllerBase, Store {
     });
   }
 
-  final _$atividadesAtom =
-      Atom(name: '_SimularSeguroControllerBase.atividades');
+  final _$atividadesAtom = Atom(name: '_AtividadesControllerBase.atividades');
 
   @override
   List<AtividadeModel> get atividades {
@@ -80,46 +78,46 @@ mixin _$SimularSeguroController on _SimularSeguroControllerBase, Store {
   }
 
   final _$getAtividadesAsyncAction =
-      AsyncAction('_SimularSeguroControllerBase.getAtividades');
+      AsyncAction('_AtividadesControllerBase.getAtividades');
 
   @override
   Future getAtividades() {
     return _$getAtividadesAsyncAction.run(() => super.getAtividades());
   }
 
-  final _$_SimularSeguroControllerBaseActionController =
-      ActionController(name: '_SimularSeguroControllerBase');
+  final _$_AtividadesControllerBaseActionController =
+      ActionController(name: '_AtividadesControllerBase');
 
   @override
   dynamic setFocus(bool value) {
-    final _$actionInfo = _$_SimularSeguroControllerBaseActionController
-        .startAction(name: '_SimularSeguroControllerBase.setFocus');
+    final _$actionInfo = _$_AtividadesControllerBaseActionController
+        .startAction(name: '_AtividadesControllerBase.setFocus');
     try {
       return super.setFocus(value);
     } finally {
-      _$_SimularSeguroControllerBaseActionController.endAction(_$actionInfo);
+      _$_AtividadesControllerBaseActionController.endAction(_$actionInfo);
     }
   }
 
   @override
   dynamic setSearchText(dynamic value) {
-    final _$actionInfo = _$_SimularSeguroControllerBaseActionController
-        .startAction(name: '_SimularSeguroControllerBase.setSearchText');
+    final _$actionInfo = _$_AtividadesControllerBaseActionController
+        .startAction(name: '_AtividadesControllerBase.setSearchText');
     try {
       return super.setSearchText(value);
     } finally {
-      _$_SimularSeguroControllerBaseActionController.endAction(_$actionInfo);
+      _$_AtividadesControllerBaseActionController.endAction(_$actionInfo);
     }
   }
 
   @override
   dynamic setTitle({required BuildContext context, required Titles titles}) {
-    final _$actionInfo = _$_SimularSeguroControllerBaseActionController
-        .startAction(name: '_SimularSeguroControllerBase.setTitle');
+    final _$actionInfo = _$_AtividadesControllerBaseActionController
+        .startAction(name: '_AtividadesControllerBase.setTitle');
     try {
       return super.setTitle(context: context, titles: titles);
     } finally {
-      _$_SimularSeguroControllerBaseActionController.endAction(_$actionInfo);
+      _$_AtividadesControllerBaseActionController.endAction(_$actionInfo);
     }
   }
 

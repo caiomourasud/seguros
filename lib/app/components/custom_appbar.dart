@@ -10,12 +10,16 @@ GlobalKey<NavigatorState> modalNavigatorKey = GlobalKey<NavigatorState>();
 
 class CustomSliverAppBar extends StatelessWidget {
   final double value;
+  final bool? hasShadow;
 
-  const CustomSliverAppBar({Key? key, required this.value}) : super(key: key);
+  const CustomSliverAppBar(
+      {Key? key, required this.value, this.hasShadow = true})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
       pinned: true,
+      elevation: hasShadow! ? null : 0.0,
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       leading: MouseRegion(
         cursor: SystemMouseCursors.click,
