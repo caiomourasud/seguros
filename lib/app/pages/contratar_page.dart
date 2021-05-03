@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -251,7 +252,9 @@ class _ContratarPageState extends State<ContratarPage> {
                                       color: Theme.of(context)
                                           .colorScheme
                                           .secondary,
-                                      fontWeight: FontWeight.bold)),
+                                      fontWeight: FontWeight.bold),
+                                  recognizer: new TapGestureRecognizer()
+                                    ..onTap = () => print('onTap')),
                               TextSpan(
                                   text: '.',
                                   style: TextStyle(
@@ -290,7 +293,9 @@ class _ContratarPageState extends State<ContratarPage> {
                                 .entenderComoFunciona,
                             style: TextStyle(
                                 color: Theme.of(context).colorScheme.secondary,
-                                fontWeight: FontWeight.bold)),
+                                fontWeight: FontWeight.bold),
+                            recognizer: new TapGestureRecognizer()
+                              ..onTap = () => print('onTap')),
                         TextSpan(
                             text: '.',
                             style: TextStyle(

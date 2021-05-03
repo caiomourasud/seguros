@@ -25,6 +25,9 @@
     "seguroCobreDoencasExcludas": "Does this life insurance cover illnesses that are generally excluded?",
     "quaisVantagens": "What are the advantages of Nubank Vida?",
 
+    "porqueImportante": "Why is this information important?",
+    "importanteProfissao": "In addition to your profession being important in the simulation, choosing the right option ensures that you will have no problems to receive the contracted coverage in case you need it.",
+
     "qualAtividade": "What is your professional activity?",
     "qualAtividadeDescription": "Select your current profession from the list below. It is important to select the correct activity, as this interferes with your proposal and the validation of the contract.",
     "buscarComerciante": "Search \"merchant\"",
@@ -88,6 +91,16 @@
     "contratarSeguro": "Hire insurance",
     "continuarAceita": "By continuing, you accept the ",
     "termos": "Terms and conditions",
+
+    "enviandoInformacoes": "Submitting your information",
+    "trabalhandoNisso": "Working on it...",
+    "seguroAprovado": "Approved insurance",
+
+    "seguroContratado": "Insurance contracted!",
+    "seguroAtivo": "Your insurance is already active and you can add beneficiaries now or later.",
+
+    "consultarDetalhes": "You can always consult all the details of your insurance coverage in the ",
+    "adicionarBeneficiarios": "Add beneficiaries",
 
     "loremIpsum1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur auctor ipsum cursus risus molestie lobortis. Ut rutrum est sit amet velit ullamcorper dictum.",
     "loremIpsum2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur auctor ipsum cursus risus molestie lobortis. Ut rutrum est sit amet velit ullamcorper dictum. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur auctor ipsum cursus risus molestie lobortis. Ut rutrum est sit amet velit ullamcorper dictum.",

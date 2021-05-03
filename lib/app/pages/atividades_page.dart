@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:seguros/app/components/atividades_modal_bottom_sheet.dart';
 import 'package:seguros/app/components/custom_appbar.dart';
 import 'package:seguros/app/components/listtiles/atividade_listtille.dart';
 import 'package:seguros/app/components/searchbar_widget.dart';
@@ -19,17 +20,17 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 final _appController = Modular.get<AppController>();
 final _atividadesController = Modular.get<AtividadesController>();
 
-late ScrollController _scrollController;
-double _scrollPosition = 0.0;
 late FocusNode _focus;
 late TextEditingController _buscar;
+late ScrollController _scrollController;
+double _scrollPosition = 0.0;
 
-class SimularSeguroPage extends StatefulWidget {
+class AtividadesPage extends StatefulWidget {
   @override
-  _SimularSeguroPageState createState() => _SimularSeguroPageState();
+  _AtividadesPageState createState() => _AtividadesPageState();
 }
 
-class _SimularSeguroPageState extends State<SimularSeguroPage> {
+class _AtividadesPageState extends State<AtividadesPage> {
   int atividadeId = 0;
 
   @override
@@ -40,8 +41,11 @@ class _SimularSeguroPageState extends State<SimularSeguroPage> {
     _focus.addListener(_onFocusChange);
     _scrollController.addListener(_scrollListener);
     _atividadesController.atividades = [];
-    Timer(Duration(milliseconds: 300), () {
+    Timer(Duration(milliseconds: 500), () {
       _atividadesController.getAtividades();
+      Timer(Duration(milliseconds: 300), () {
+        AtividadesModalBottomSheet().show(context: context);
+      });
     });
 
     super.initState();

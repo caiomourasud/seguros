@@ -8,10 +8,10 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 final _appController = Modular.get<AppController>();
 
-class SimularButton extends StatelessWidget {
+class AdicionarBeneficiariosButton extends StatelessWidget {
   final double? bottomSheetHeight;
 
-  const SimularButton({Key? key, this.bottomSheetHeight = 94.0})
+  const AdicionarBeneficiariosButton({Key? key, this.bottomSheetHeight = 94.0})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,8 @@ class SimularButton extends StatelessWidget {
           color: Colors.purple[800],
           pressedOpacity: 0.8,
           child: Text(
-              AppLocalizations.of(_appController.context!)!.btnSimularSeguro,
+              AppLocalizations.of(_appController.context!)!
+                  .adicionarBeneficiarios,
               style: Theme.of(context)
                   .textTheme
                   .headline6

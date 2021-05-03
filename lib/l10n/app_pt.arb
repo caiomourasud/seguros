@@ -25,6 +25,9 @@
     "seguroCobreDoencasExcludas": "Esse seguro de vida cobre doenças geralmente excluídas?",
     "quaisVantagens": "Quais as vantagens do Nubank Vida?",
 
+    "porqueImportante": "Por que essa informação é importante?",
+    "importanteProfissao": "Além de sua profissão ser importante na simulação, escolher a opção correta garante que você não tenha problemas para receber as coberturas contratadas caso precise.",
+
     "qualAtividade": "Qual é a sua atividade profissional?",
     "qualAtividadeDescription": "Selecione sua profissão atual na lista abaixo. É importante selecionar a atividade correta, pois isso interfere na sua proposta e na validação do contrato.",
     "buscarComerciante": "Buscar \"comerciante\"",
@@ -88,6 +91,16 @@
     "contratarSeguro": "Contratar seguro",
     "continuarAceita": "Ao continuar, você aceita os ",
     "termos": "Termos e condições",
+
+    "enviandoInformacoes": "Enviando suas informações",
+    "trabalhandoNisso": "Trabalhando nisso...",
+    "seguroAprovado": "Seguro aprovado",
+
+    "seguroContratado": "Seguro contratado!",
+    "seguroAtivo": "Seu seguro já está ativo e você pode adicionar os beneficiários agora ou mais tarde.",
+
+    "consultarDetalhes": "Você sempre pode consultar todos os detalhes das coberturas do seu seguro nos ",
+    "adicionarBeneficiarios": "Adicionar beneficiários",
 
     "loremIpsum1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur auctor ipsum cursus risus molestie lobortis. Ut rutrum est sit amet velit ullamcorper dictum.",
     "loremIpsum2": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur auctor ipsum cursus risus molestie lobortis. Ut rutrum est sit amet velit ullamcorper dictum. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur auctor ipsum cursus risus molestie lobortis. Ut rutrum est sit amet velit ullamcorper dictum.",

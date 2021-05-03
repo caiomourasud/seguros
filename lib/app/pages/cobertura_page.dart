@@ -7,7 +7,7 @@ import 'package:seguros/app/components/custom_appbar.dart';
 import 'package:seguros/app/components/descriptions/cobertura_description.dart';
 import 'package:seguros/app/components/bottom_sheets/continuar_buttom.dart';
 import 'package:seguros/app/components/listtiles/custom_checkbox_listtile.dart';
-import 'package:seguros/app/components/custom_track_shape.dart';
+import 'package:seguros/app/components/slider/custum_slider.dart';
 import 'package:seguros/app/controllers/cobertura_controller.dart';
 import 'package:seguros/app/controllers/atividades_controller.dart';
 import 'package:seguros/app/models/atividade_model.dart';
@@ -125,44 +125,21 @@ class _CoberturaPageState extends State<CoberturaPage> {
                             ),
                           ),
                           SizedBox(height: 12.0),
-                          SliderTheme(
-                            data: SliderThemeData(
-                                trackHeight: 5.0,
-                                activeTickMarkColor:
-                                    Theme.of(context).colorScheme.secondary,
-                                activeTrackColor:
-                                    Theme.of(context).colorScheme.secondary,
-                                thumbColor:
-                                    Theme.of(context).colorScheme.secondary,
-                                inactiveTrackColor: Colors.grey[300],
-                                inactiveTickMarkColor: Colors.grey[300],
-                                overlayColor: Theme.of(context)
-                                    .colorScheme
-                                    .secondary
-                                    .withAlpha(80),
-                                trackShape: CustomTrackShape(),
-                                thumbShape: RoundSliderThumbShape(
-                                    enabledThumbRadius: 16.0)),
-                            child: Slider(
-                              value: _coberturaController.cobertura,
-                              min: 50000,
-                              max: 150000,
-                              divisions: 4,
-                              onChanged: (double value) {
-                                _coberturaController.setCobertura(value);
-                                _coberturaController.setValorTotal(
-                                    _coberturaController.setValue(
-                                        cobertura: _coberturaController
-                                            .cobertura
-                                            .toString(),
-                                        values: widget.atividade.values!));
-                                _coberturaController.setHospitalizacao(false);
-                                _coberturaController.setInvalidez(false);
-                                _coberturaController
-                                    .setFuneralConjugeFilhos(false);
-                                _coberturaController.setFuneralPais(false);
-                              },
-                            ),
+                          CustomSlider(
+                            value: _coberturaController.cobertura,
+                            onChange: (value) {
+                              _coberturaController.setCobertura(value);
+                              _coberturaController.setValorTotal(
+                                  _coberturaController.setValue(
+                                      cobertura: _coberturaController.cobertura
+                                          .toString(),
+                                      values: widget.atividade.values!));
+                              _coberturaController.setHospitalizacao(false);
+                              _coberturaController.setInvalidez(false);
+                              _coberturaController
+                                  .setFuneralConjugeFilhos(false);
+                              _coberturaController.setFuneralPais(false);
+                            },
                           ),
                           SizedBox(height: 6.0),
                           Padding(
