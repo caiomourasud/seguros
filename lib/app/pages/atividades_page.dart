@@ -81,7 +81,11 @@ class _AtividadesPageState extends State<AtividadesPage> {
   Widget build(BuildContext context) {
     return Observer(builder: (_) {
       return _atividadesController.atividades.isEmpty
-          ? Material(child: Center(child: CircularProgressIndicator()))
+          ? Material(
+              child: Center(
+                  child: CircularProgressIndicator(
+                      valueColor: new AlwaysStoppedAnimation<Color>(
+                          Theme.of(context).colorScheme.secondary))))
           : GestureDetector(
               onTap: () => FocusScope.of(context).unfocus(),
               child: Scaffold(

@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:seguros/app/components/bottom_sheets/adicionar_beneficiarios_buttom.dart';
+import 'package:seguros/app/components/bottom_sheets/generic_button.dart';
+
+import 'atividades_page.dart';
 
 class ContratadoPage extends StatefulWidget {
   @override
@@ -15,7 +17,12 @@ class _ContratadoPageState extends State<ContratadoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomSheet: AdicionarBeneficiariosButton(),
+      bottomSheet: GenericButton(
+          text: AppLocalizations.of(context)!.adicionarBeneficiarios,
+          onPressed: () =>
+              Navigator.push(context, CupertinoPageRoute(builder: (context) {
+                return AtividadesPage();
+              }))),
       body: CustomScrollView(
         slivers: [
           SliverAppBar(

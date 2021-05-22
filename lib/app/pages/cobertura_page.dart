@@ -5,7 +5,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:seguros/app/components/custom_appbar.dart';
 import 'package:seguros/app/components/descriptions/cobertura_description.dart';
-import 'package:seguros/app/components/bottom_sheets/continuar_buttom.dart';
+import 'package:seguros/app/components/bottom_sheets/details_button.dart';
 import 'package:seguros/app/components/listtiles/custom_checkbox_listtile.dart';
 import 'package:seguros/app/components/slider/custum_slider.dart';
 import 'package:seguros/app/controllers/cobertura_controller.dart';
@@ -55,7 +55,7 @@ class _CoberturaPageState extends State<CoberturaPage> {
       child: GestureDetector(
         child: Scaffold(
             bottomSheet: Observer(builder: (_) {
-              return ContinuarButton(
+              return DetailsButton(
                 valor: _coberturaController.valorTotal,
                 onPressed: () => Navigator.push(context,
                     CupertinoPageRoute(builder: (context) {

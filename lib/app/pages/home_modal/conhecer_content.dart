@@ -2,9 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:seguros/app/components/bottom_sheets/simular_buttom.dart';
+import 'package:seguros/app/components/bottom_sheets/generic_button.dart';
 import 'package:seguros/app/controllers/app_controller.dart';
 
+import '../atividades_page.dart';
 import 'duvidas_content.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -141,7 +142,13 @@ class ConhecerContent extends StatelessWidget {
                   ),
                 ),
               ),
-              SimularButton()
+              GenericButton(
+                  text: AppLocalizations.of(_appController.context!)!
+                      .btnSimularSeguro,
+                  onPressed: () => Navigator.push(_appController.context!,
+                          CupertinoPageRoute(builder: (context) {
+                        return AtividadesPage();
+                      })))
             ],
           ),
         ],

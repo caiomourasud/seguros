@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:intl/intl.dart';
-import 'package:seguros/app/components/bottom_sheets/contratar_buttom.dart';
+
+import 'package:seguros/app/components/bottom_sheets/generic_button.dart';
 import 'package:seguros/app/components/custom_appbar.dart';
 import 'package:seguros/app/components/listtiles/contratar_listtile.dart';
 import 'package:seguros/app/components/listtiles/contratar_value_listtile.dart';
@@ -13,6 +14,8 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:seguros/app/controllers/cobertura_controller.dart';
 import 'package:seguros/app/models/atividade_model.dart';
 import 'package:seguros/app/utils/converters.dart';
+
+import 'carregando_page.dart';
 
 final _coberturaController = Modular.get<CoberturaController>();
 GlobalKey<NavigatorState> modalNavigatorKey = GlobalKey<NavigatorState>();
@@ -33,7 +36,36 @@ class _ContratarPageState extends State<ContratarPage> {
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Scaffold(
-          bottomSheet: ContratarButton(),
+          bottomSheet: GenericButton(
+              hasIndicator: true,
+              text: AppLocalizations.of(context)!.contratarSeguro,
+              subtitle: RichText(
+                text: TextSpan(
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyText2
+                        ?.copyWith(fontSize: 15),
+                    children: <TextSpan>[
+                      TextSpan(
+                        text: AppLocalizations.of(context)!.continuarAceita,
+                      ),
+                      TextSpan(
+                          text: AppLocalizations.of(context)!.termos,
+                          style: TextStyle(
+                              color: Theme.of(context).colorScheme.secondary,
+                              fontWeight: FontWeight.bold),
+                          recognizer: new TapGestureRecognizer()
+                            ..onTap = () => print('onTap')),
+                      TextSpan(
+                        text: '.',
+                      ),
+                    ]),
+              ),
+              onPressed: () {
+                Navigator.push(context, CupertinoPageRoute(builder: (context) {
+                  return CarregandoPage();
+                }));
+              }),
           body: CustomScrollView(
             slivers: [
               CustomSliverAppBar(value: 1.0),

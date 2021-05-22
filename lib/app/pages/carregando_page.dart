@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:seguros/app/components/carregando_text.dart';
 
 import 'contratado_page.dart';
 
@@ -15,7 +16,7 @@ class CarregandoPage extends StatefulWidget {
 
 class _CarregandoPageState extends State<CarregandoPage> {
   double progress = 0.2;
-  int passo = 0;
+  int step = 0;
 
   @override
   void initState() {
@@ -27,12 +28,12 @@ class _CarregandoPageState extends State<CarregandoPage> {
     Timer(Duration(milliseconds: 1200), () {
       setState(() {
         progress = 0.8;
-        passo = 1;
+        step = 1;
       });
       Timer(Duration(milliseconds: 2000), () {
         setState(() {
           progress = 1.0;
-          passo = 2;
+          step = 2;
         });
         Timer(Duration(milliseconds: 2000), () {
           Navigator.pushAndRemoveUntil(
@@ -70,48 +71,21 @@ class _CarregandoPageState extends State<CarregandoPage> {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 22.0),
-              child: AnimatedOpacity(
-                opacity: passo == 0 ? 1.0 : 0.0,
-                duration: Duration(milliseconds: 300),
-                child: Text(
-                  AppLocalizations.of(context)!.enviandoInformacoes,
-                  style: Theme.of(context).textTheme.headline4?.copyWith(
-                      fontWeight: FontWeight.w500,
-                      color: Theme.of(context).colorScheme.onSurface),
-                ),
-              ),
+            CarregandoText(
+              step: step == 0 ? 1.0 : 0.0,
+              text: AppLocalizations.of(context)!.enviandoInformacoes,
             ),
-            if (passo > 0) SizedBox(height: 48.0),
-            if (passo > 0)
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 22.0),
-                child: AnimatedOpacity(
-                  opacity: passo == 1 ? 1.0 : 0.0,
-                  duration: Duration(milliseconds: 300),
-                  child: Text(
-                    AppLocalizations.of(context)!.trabalhandoNisso,
-                    style: Theme.of(context).textTheme.headline4?.copyWith(
-                        fontWeight: FontWeight.w500,
-                        color: Theme.of(context).colorScheme.onSurface),
-                  ),
-                ),
+            if (step > 0) SizedBox(height: 48.0),
+            if (step > 0)
+              CarregandoText(
+                step: step == 1 ? 1.0 : 0.0,
+                text: AppLocalizations.of(context)!.trabalhandoNisso,
               ),
-            if (passo == 2) SizedBox(height: 48.0),
-            if (passo == 2)
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 22.0),
-                child: AnimatedOpacity(
-                  opacity: passo == 2 ? 1.0 : 0.0,
-                  duration: Duration(milliseconds: 300),
-                  child: Text(
-                    AppLocalizations.of(context)!.seguroAprovado,
-                    style: Theme.of(context).textTheme.headline4?.copyWith(
-                        fontWeight: FontWeight.w500,
-                        color: Theme.of(context).colorScheme.onSurface),
-                  ),
-                ),
+            if (step == 2) SizedBox(height: 48.0),
+            if (step == 2)
+              CarregandoText(
+                step: step == 2 ? 1.0 : 0.0,
+                text: AppLocalizations.of(context)!.seguroAprovado,
               ),
             SizedBox(height: 48.0),
             Padding(
@@ -119,6 +93,7 @@ class _CarregandoPageState extends State<CarregandoPage> {
               child: LinearProgressIndicator(
                 minHeight: 4,
                 value: progress,
+                color: Theme.of(context).colorScheme.secondary,
                 backgroundColor: Colors.grey[300],
               ),
             ),

@@ -2,12 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:seguros/app/components/bottom_sheets/generic_button.dart';
 import 'package:seguros/app/components/cached_image_widget.dart';
 import 'package:seguros/app/components/custom_modal_bottom_sheet.dart';
 import 'package:seguros/app/components/descriptions/home_description.dart';
-import 'package:seguros/app/components/bottom_sheets/simular_buttom.dart';
 import 'package:seguros/app/controllers/app_controller.dart';
 
+import 'atividades_page.dart';
 import 'home_modal/conhecer_content.dart';
 import 'home_modal/duvidas_content.dart';
 import 'view/default_view.dart';
@@ -61,7 +62,13 @@ class _HomePageState extends State<HomePage> {
                 elevation: 0.0,
               ),
               extendBodyBehindAppBar: true,
-              bottomSheet: SimularButton(),
+              bottomSheet: GenericButton(
+                  text: AppLocalizations.of(_appController.context!)!
+                      .btnSimularSeguro,
+                  onPressed: () => Navigator.push(_appController.context!,
+                          CupertinoPageRoute(builder: (context) {
+                        return AtividadesPage();
+                      }))),
               body: CustomScrollView(
                 controller: _scrollController,
                 physics:

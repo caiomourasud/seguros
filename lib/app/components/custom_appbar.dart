@@ -36,6 +36,7 @@ class CustomSliverAppBar extends StatelessWidget {
         child: LinearProgressIndicator(
           minHeight: 2.5,
           value: value,
+          color: Theme.of(context).colorScheme.secondary,
           backgroundColor: Colors.grey[300],
         ),
       ),

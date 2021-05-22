@@ -8,14 +8,12 @@ import 'package:seguros/app/utils/converters.dart';
 
 final _appController = Modular.get<AppController>();
 
-class ContinuarButton extends StatelessWidget {
+class DetailsButton extends StatelessWidget {
   final double valor;
   final Function onPressed;
-  final double? bottomSheetHeight;
 
-  const ContinuarButton({
+  const DetailsButton({
     Key? key,
-    this.bottomSheetHeight = 102.0,
     required this.onPressed,
     required this.valor,
   }) : super(key: key);
@@ -26,7 +24,6 @@ class ContinuarButton extends StatelessWidget {
       children: [
         Divider(height: 0.0),
         Container(
-          height: bottomSheetHeight,
           width: MediaQuery.of(context).size.width,
           padding: EdgeInsets.symmetric(vertical: 22.0, horizontal: 22.0),
           child: Row(
@@ -57,7 +54,7 @@ class ContinuarButton extends StatelessWidget {
               ),
               CupertinoButton(
                   borderRadius: BorderRadius.all(Radius.circular(50)),
-                  color: Colors.purple[800],
+                  color: Theme.of(context).colorScheme.secondary,
                   pressedOpacity: 0.8,
                   padding: EdgeInsets.fromLTRB(26.0, 14.0, 26.0, 14.0),
                   child: Text(
