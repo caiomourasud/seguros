@@ -6,10 +6,11 @@ part of 'cobertura_controller.dart';
 // StoreGenerator
 // **************************************************************************
 
-// ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
+// ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
 mixin _$CoberturaController on _CoberturaControllerBase, Store {
-  final _$coberturaAtom = Atom(name: '_CoberturaControllerBase.cobertura');
+  late final _$coberturaAtom =
+      Atom(name: '_CoberturaControllerBase.cobertura', context: context);
 
   @override
   double get cobertura {
@@ -24,7 +25,8 @@ mixin _$CoberturaController on _CoberturaControllerBase, Store {
     });
   }
 
-  final _$valorTotalAtom = Atom(name: '_CoberturaControllerBase.valorTotal');
+  late final _$valorTotalAtom =
+      Atom(name: '_CoberturaControllerBase.valorTotal', context: context);
 
   @override
   double get valorTotal {
@@ -39,8 +41,8 @@ mixin _$CoberturaController on _CoberturaControllerBase, Store {
     });
   }
 
-  final _$hospitalizacaoAtom =
-      Atom(name: '_CoberturaControllerBase.hospitalizacao');
+  late final _$hospitalizacaoAtom =
+      Atom(name: '_CoberturaControllerBase.hospitalizacao', context: context);
 
   @override
   bool get hospitalizacao {
@@ -55,7 +57,8 @@ mixin _$CoberturaController on _CoberturaControllerBase, Store {
     });
   }
 
-  final _$invalidezAtom = Atom(name: '_CoberturaControllerBase.invalidez');
+  late final _$invalidezAtom =
+      Atom(name: '_CoberturaControllerBase.invalidez', context: context);
 
   @override
   bool get invalidez {
@@ -70,8 +73,8 @@ mixin _$CoberturaController on _CoberturaControllerBase, Store {
     });
   }
 
-  final _$funeralConjugeFilhosAtom =
-      Atom(name: '_CoberturaControllerBase.funeralConjugeFilhos');
+  late final _$funeralConjugeFilhosAtom = Atom(
+      name: '_CoberturaControllerBase.funeralConjugeFilhos', context: context);
 
   @override
   bool get funeralConjugeFilhos {
@@ -87,7 +90,8 @@ mixin _$CoberturaController on _CoberturaControllerBase, Store {
     });
   }
 
-  final _$funeralPaisAtom = Atom(name: '_CoberturaControllerBase.funeralPais');
+  late final _$funeralPaisAtom =
+      Atom(name: '_CoberturaControllerBase.funeralPais', context: context);
 
   @override
   bool get funeralPais {
@@ -102,8 +106,8 @@ mixin _$CoberturaController on _CoberturaControllerBase, Store {
     });
   }
 
-  final _$_CoberturaControllerBaseActionController =
-      ActionController(name: '_CoberturaControllerBase');
+  late final _$_CoberturaControllerBaseActionController =
+      ActionController(name: '_CoberturaControllerBase', context: context);
 
   @override
   dynamic setCobertura(double value) {

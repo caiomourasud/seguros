@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:intl/intl.dart';
 import 'package:seguros/app/components/custom_appbar.dart';
@@ -70,7 +69,7 @@ class _FormaPagamentoPageState extends State<FormaPagamentoPage> {
                             .format(DateTime.now())
                             .toUpperCase(),
                     onTap: () {
-                      Navigator.push(_appController.context!,
+                      Navigator.push(_appController.buildContext!,
                           CupertinoPageRoute(builder: (context) {
                         return ContratarPage(
                             atividade: widget.atividade,
@@ -86,7 +85,7 @@ class _FormaPagamentoPageState extends State<FormaPagamentoPage> {
                         Converters().setReal(context) +
                         '\$ ${Converters().moneyFormat(context).format(516.12)}',
                     onTap: () {
-                      Navigator.push(_appController.context!,
+                      Navigator.push(_appController.buildContext!,
                           CupertinoPageRoute(builder: (context) {
                         return ContratarPage(
                             atividade: widget.atividade,

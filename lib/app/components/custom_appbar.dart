@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:seguros/app/pages/home_modal/duvidas_content.dart';
 import 'package:seguros/app/pages/view/default_view.dart';
 

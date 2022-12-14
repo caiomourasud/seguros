@@ -61,7 +61,8 @@ abstract class _AtividadesControllerBase with Store {
       return atividades
           .where((atividade) => Converters()
               .simplifyString(setTitle(
-                  context: _appController.context!, titles: atividade.titles!))
+                  context: _appController.buildContext!,
+                  titles: atividade.titles!))
               .contains(Converters().simplifyString(searchText)))
           .toList();
     }

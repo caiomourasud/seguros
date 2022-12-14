@@ -37,7 +37,7 @@ class DetailsButton extends StatelessWidget {
                   Text(
                     Converters().setReal(context) +
                         '\$ ${Converters().moneyFormat(context).format(valor)} / ' +
-                        AppLocalizations.of(_appController.context!)!.mes,
+                        AppLocalizations.of(_appController.buildContext!)!.mes,
                     style: Theme.of(context)
                         .textTheme
                         .headline6
@@ -46,7 +46,7 @@ class DetailsButton extends StatelessWidget {
                   Opacity(
                     opacity: 0.8,
                     child: Text(
-                        AppLocalizations.of(_appController.context!)!
+                        AppLocalizations.of(_appController.buildContext!)!
                             .semTarifasEscondidas,
                         style: Theme.of(context).textTheme.subtitle1),
                   ),
@@ -58,7 +58,8 @@ class DetailsButton extends StatelessWidget {
                   pressedOpacity: 0.8,
                   padding: EdgeInsets.fromLTRB(26.0, 14.0, 26.0, 14.0),
                   child: Text(
-                      AppLocalizations.of(_appController.context!)!.continuar,
+                      AppLocalizations.of(_appController.buildContext!)!
+                          .continuar,
                       style: Theme.of(context)
                           .textTheme
                           .headline6

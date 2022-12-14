@@ -6,10 +6,10 @@ class AppController = _AppControllerBase with _$AppController;
 
 abstract class _AppControllerBase with Store {
   @observable
-  BuildContext? context;
+  BuildContext? buildContext;
 
   @action
-  setContext(value) => context = value;
+  setContext(value) => buildContext = value;
 
   @observable
   String connectionStatus = 'Unknown';

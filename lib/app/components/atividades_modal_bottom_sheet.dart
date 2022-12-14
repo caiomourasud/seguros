@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -44,7 +43,7 @@ class AtividadesModalBottomSheet {
                 children: [
                   SizedBox(height: 12.0),
                   Text(
-                    AppLocalizations.of(_appController.context!)!
+                    AppLocalizations.of(_appController.buildContext!)!
                         .porqueImportante,
                     style: Theme.of(context).textTheme.headline5?.copyWith(
                         fontSize: 25,
@@ -55,7 +54,7 @@ class AtividadesModalBottomSheet {
                   Opacity(
                     opacity: 0.8,
                     child: Text(
-                        AppLocalizations.of(_appController.context!)!
+                        AppLocalizations.of(_appController.buildContext!)!
                             .importanteProfissao,
                         style: Theme.of(context)
                             .textTheme
@@ -73,7 +72,7 @@ class AtividadesModalBottomSheet {
                         color: Colors.grey[350],
                         pressedOpacity: 0.8,
                         child: Text(
-                            AppLocalizations.of(_appController.context!)!
+                            AppLocalizations.of(_appController.buildContext!)!
                                 .continuar,
                             style: Theme.of(context).textTheme.headline6),
                         onPressed: () => Navigator.of(context).pop()),

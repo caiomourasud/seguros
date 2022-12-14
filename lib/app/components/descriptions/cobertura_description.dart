@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:seguros/app/controllers/app_controller.dart';
 import 'package:seguros/app/pages/view/default_view.dart';
@@ -69,7 +68,8 @@ class CoberturaDescription extends StatelessWidget {
                             ),
                             padding: EdgeInsets.all(4.0),
                             child: Text(valorAdicional == 0.0
-                                ? AppLocalizations.of(_appController.context!)!
+                                ? AppLocalizations.of(
+                                        _appController.buildContext!)!
                                     .incluido
                                 : '+ ' +
                                     Converters().setReal(context) +
@@ -112,11 +112,12 @@ class CoberturaDescription extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                            AppLocalizations.of(_appController.context!)!
+                            AppLocalizations.of(_appController.buildContext!)!
                                 .verDetalhes,
                             style: Theme.of(context).textTheme.button?.copyWith(
                                 fontSize: 16,
-                                color: Theme.of(context).accentColor)),
+                                color:
+                                    Theme.of(context).colorScheme.secondary)),
                         SizedBox(width: 8.0),
                         Icon(Icons.arrow_forward_rounded, size: 22),
                       ],

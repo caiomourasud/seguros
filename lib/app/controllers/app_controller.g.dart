@@ -6,7 +6,7 @@ part of 'app_controller.dart';
 // StoreGenerator
 // **************************************************************************
 
-// ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
+// ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
 mixin _$AppController on _AppControllerBase, Store {
   Computed<bool>? _$noInternetComputed;
@@ -17,23 +17,24 @@ mixin _$AppController on _AppControllerBase, Store {
               name: '_AppControllerBase.noInternet'))
           .value;
 
-  final _$contextAtom = Atom(name: '_AppControllerBase.context');
+  late final _$buildContextAtom =
+      Atom(name: '_AppControllerBase.buildContext', context: context);
 
   @override
-  BuildContext? get context {
-    _$contextAtom.reportRead();
-    return super.context;
+  BuildContext? get buildContext {
+    _$buildContextAtom.reportRead();
+    return super.buildContext;
   }
 
   @override
-  set context(BuildContext? value) {
-    _$contextAtom.reportWrite(value, super.context, () {
-      super.context = value;
+  set buildContext(BuildContext? value) {
+    _$buildContextAtom.reportWrite(value, super.buildContext, () {
+      super.buildContext = value;
     });
   }
 
-  final _$connectionStatusAtom =
-      Atom(name: '_AppControllerBase.connectionStatus');
+  late final _$connectionStatusAtom =
+      Atom(name: '_AppControllerBase.connectionStatus', context: context);
 
   @override
   String get connectionStatus {
@@ -48,8 +49,8 @@ mixin _$AppController on _AppControllerBase, Store {
     });
   }
 
-  final _$_AppControllerBaseActionController =
-      ActionController(name: '_AppControllerBase');
+  late final _$_AppControllerBaseActionController =
+      ActionController(name: '_AppControllerBase', context: context);
 
   @override
   dynamic setContext(dynamic value) {
@@ -76,7 +77,7 @@ mixin _$AppController on _AppControllerBase, Store {
   @override
   String toString() {
     return '''
-context: ${context},
+buildContext: ${buildContext},
 connectionStatus: ${connectionStatus},
 noInternet: ${noInternet}
     ''';

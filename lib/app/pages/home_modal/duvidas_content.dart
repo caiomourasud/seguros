@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:seguros/app/components/listtiles/duvida_listtile.dart';
 import 'package:seguros/app/controllers/app_controller.dart';
@@ -50,13 +49,15 @@ class DuvidasContent extends StatelessWidget {
                                       color: Colors.grey[600]),
                                   onPressed: () => backButton!
                                       ? Navigator.of(context).pop()
-                                      : Navigator.of(_appController.context!)
+                                      : Navigator.of(
+                                              _appController.buildContext!)
                                           .pop()),
                             ),
                             Opacity(
                               opacity: 0.8,
                               child: Text(
-                                  AppLocalizations.of(_appController.context!)!
+                                  AppLocalizations.of(
+                                          _appController.buildContext!)!
                                       .seguroDeVida
                                       .toUpperCase(),
                                   style:
@@ -82,34 +83,40 @@ class DuvidasContent extends StatelessWidget {
                   color: Theme.of(context).scaffoldBackgroundColor,
                   child: ListView(padding: EdgeInsets.zero, children: [
                     DuvidaListTile(
-                        title: AppLocalizations.of(_appController.context!)!
-                            .oQueEnubankVida,
-                        text: AppLocalizations.of(_appController.context!)!
+                        title:
+                            AppLocalizations.of(_appController.buildContext!)!
+                                .oQueEnubankVida,
+                        text: AppLocalizations.of(_appController.buildContext!)!
                             .loremIpsum2),
                     DuvidaListTile(
-                        title: AppLocalizations.of(_appController.context!)!
-                            .naoEncontro,
-                        text: AppLocalizations.of(_appController.context!)!
+                        title:
+                            AppLocalizations.of(_appController.buildContext!)!
+                                .naoEncontro,
+                        text: AppLocalizations.of(_appController.buildContext!)!
                             .loremIpsum1),
                     DuvidaListTile(
-                        title: AppLocalizations.of(_appController.context!)!
-                            .comoBeneficiariosAcionam,
-                        text: AppLocalizations.of(_appController.context!)!
+                        title:
+                            AppLocalizations.of(_appController.buildContext!)!
+                                .comoBeneficiariosAcionam,
+                        text: AppLocalizations.of(_appController.buildContext!)!
                             .loremIpsum3),
                     DuvidaListTile(
-                        title: AppLocalizations.of(_appController.context!)!
-                            .quemDeveriaTerSeguro,
-                        text: AppLocalizations.of(_appController.context!)!
+                        title:
+                            AppLocalizations.of(_appController.buildContext!)!
+                                .quemDeveriaTerSeguro,
+                        text: AppLocalizations.of(_appController.buildContext!)!
                             .loremIpsum2),
                     DuvidaListTile(
-                        title: AppLocalizations.of(_appController.context!)!
-                            .seguroCobreDoencasExcludas,
-                        text: AppLocalizations.of(_appController.context!)!
+                        title:
+                            AppLocalizations.of(_appController.buildContext!)!
+                                .seguroCobreDoencasExcludas,
+                        text: AppLocalizations.of(_appController.buildContext!)!
                             .loremIpsum2),
                     DuvidaListTile(
-                        title: AppLocalizations.of(_appController.context!)!
-                            .quaisVantagens,
-                        text: AppLocalizations.of(_appController.context!)!
+                        title:
+                            AppLocalizations.of(_appController.buildContext!)!
+                                .quaisVantagens,
+                        text: AppLocalizations.of(_appController.buildContext!)!
                             .loremIpsum2),
                     SizedBox(
                       height: MediaQuery.of(context).viewPadding.bottom,

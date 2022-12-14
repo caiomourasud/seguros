@@ -6,7 +6,7 @@ part of 'atividades_controller.dart';
 // StoreGenerator
 // **************************************************************************
 
-// ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
+// ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
 mixin _$AtividadesController on _AtividadesControllerBase, Store {
   Computed<List<AtividadeModel>>? _$filterAtividadesComputed;
@@ -17,7 +17,8 @@ mixin _$AtividadesController on _AtividadesControllerBase, Store {
               name: '_AtividadesControllerBase.filterAtividades'))
       .value;
 
-  final _$focusAtom = Atom(name: '_AtividadesControllerBase.focus');
+  late final _$focusAtom =
+      Atom(name: '_AtividadesControllerBase.focus', context: context);
 
   @override
   FocusNode get focus {
@@ -32,7 +33,8 @@ mixin _$AtividadesController on _AtividadesControllerBase, Store {
     });
   }
 
-  final _$onFocusAtom = Atom(name: '_AtividadesControllerBase.onFocus');
+  late final _$onFocusAtom =
+      Atom(name: '_AtividadesControllerBase.onFocus', context: context);
 
   @override
   bool get onFocus {
@@ -47,7 +49,8 @@ mixin _$AtividadesController on _AtividadesControllerBase, Store {
     });
   }
 
-  final _$searchTextAtom = Atom(name: '_AtividadesControllerBase.searchText');
+  late final _$searchTextAtom =
+      Atom(name: '_AtividadesControllerBase.searchText', context: context);
 
   @override
   String get searchText {
@@ -62,7 +65,8 @@ mixin _$AtividadesController on _AtividadesControllerBase, Store {
     });
   }
 
-  final _$atividadesAtom = Atom(name: '_AtividadesControllerBase.atividades');
+  late final _$atividadesAtom =
+      Atom(name: '_AtividadesControllerBase.atividades', context: context);
 
   @override
   List<AtividadeModel> get atividades {
@@ -77,16 +81,16 @@ mixin _$AtividadesController on _AtividadesControllerBase, Store {
     });
   }
 
-  final _$getAtividadesAsyncAction =
-      AsyncAction('_AtividadesControllerBase.getAtividades');
+  late final _$getAtividadesAsyncAction =
+      AsyncAction('_AtividadesControllerBase.getAtividades', context: context);
 
   @override
   Future getAtividades() {
     return _$getAtividadesAsyncAction.run(() => super.getAtividades());
   }
 
-  final _$_AtividadesControllerBaseActionController =
-      ActionController(name: '_AtividadesControllerBase');
+  late final _$_AtividadesControllerBaseActionController =
+      ActionController(name: '_AtividadesControllerBase', context: context);
 
   @override
   dynamic setFocus(bool value) {

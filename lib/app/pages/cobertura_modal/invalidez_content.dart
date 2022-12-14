@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:seguros/app/controllers/app_controller.dart';
 import 'package:seguros/app/pages/home_modal/duvidas_content.dart';
@@ -42,7 +41,8 @@ class InvalidezContent extends StatelessWidget {
                               child: Icon(CupertinoIcons.clear,
                                   size: 28, color: Colors.grey[600]),
                               onPressed: () =>
-                                  Navigator.of(_appController.context!).pop()),
+                                  Navigator.of(_appController.buildContext!)
+                                      .pop()),
                         ),
                         MouseRegion(
                           cursor: SystemMouseCursors.click,
@@ -69,7 +69,7 @@ class InvalidezContent extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 16.0),
                         child: Text(
-                            AppLocalizations.of(_appController.context!)!
+                            AppLocalizations.of(_appController.buildContext!)!
                                 .invalidezTotalParcial,
                             style: Theme.of(context)
                                 .textTheme
@@ -85,7 +85,8 @@ class InvalidezContent extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                                AppLocalizations.of(_appController.context!)!
+                                AppLocalizations.of(
+                                        _appController.buildContext!)!
                                     .oQueE,
                                 style: Theme.of(context)
                                     .textTheme
@@ -95,7 +96,8 @@ class InvalidezContent extends StatelessWidget {
                               height: 24.0,
                             ),
                             Text(
-                                AppLocalizations.of(_appController.context!)!
+                                AppLocalizations.of(
+                                        _appController.buildContext!)!
                                     .loremIpsum1,
                                 style: Theme.of(context)
                                     .textTheme
@@ -113,7 +115,8 @@ class InvalidezContent extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                                AppLocalizations.of(_appController.context!)!
+                                AppLocalizations.of(
+                                        _appController.buildContext!)!
                                     .comoFunciona,
                                 style: Theme.of(context)
                                     .textTheme
@@ -123,7 +126,8 @@ class InvalidezContent extends StatelessWidget {
                               height: 24.0,
                             ),
                             Text(
-                                AppLocalizations.of(_appController.context!)!
+                                AppLocalizations.of(
+                                        _appController.buildContext!)!
                                     .loremIpsum3,
                                 style: Theme.of(context)
                                     .textTheme
@@ -141,7 +145,8 @@ class InvalidezContent extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                                AppLocalizations.of(_appController.context!)!
+                                AppLocalizations.of(
+                                        _appController.buildContext!)!
                                     .periodoCarencia,
                                 style: Theme.of(context)
                                     .textTheme
@@ -151,7 +156,8 @@ class InvalidezContent extends StatelessWidget {
                               height: 24.0,
                             ),
                             Text(
-                                AppLocalizations.of(_appController.context!)!
+                                AppLocalizations.of(
+                                        _appController.buildContext!)!
                                     .loremIpsum1,
                                 style: Theme.of(context)
                                     .textTheme

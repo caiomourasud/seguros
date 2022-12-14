@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:seguros/app/components/bottom_sheets/generic_button.dart';
 import 'package:seguros/app/controllers/app_controller.dart';
@@ -45,7 +44,8 @@ class ConhecerContent extends StatelessWidget {
                               child: Icon(CupertinoIcons.clear,
                                   size: 28, color: Colors.grey[600]),
                               onPressed: () =>
-                                  Navigator.of(_appController.context!).pop()),
+                                  Navigator.of(_appController.buildContext!)
+                                      .pop()),
                         ),
                         MouseRegion(
                           cursor: SystemMouseCursors.click,
@@ -72,7 +72,7 @@ class ConhecerContent extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 16.0),
                         child: Text(
-                            AppLocalizations.of(_appController.context!)!
+                            AppLocalizations.of(_appController.buildContext!)!
                                 .seguroDeVidaNubank,
                             style: Theme.of(context)
                                 .textTheme
@@ -88,7 +88,8 @@ class ConhecerContent extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                                AppLocalizations.of(_appController.context!)!
+                                AppLocalizations.of(
+                                        _appController.buildContext!)!
                                     .oQueEseguroDeVida,
                                 style: Theme.of(context)
                                     .textTheme
@@ -98,7 +99,8 @@ class ConhecerContent extends StatelessWidget {
                               height: 24.0,
                             ),
                             Text(
-                                AppLocalizations.of(_appController.context!)!
+                                AppLocalizations.of(
+                                        _appController.buildContext!)!
                                     .loremIpsum3,
                                 style: Theme.of(context)
                                     .textTheme
@@ -116,7 +118,8 @@ class ConhecerContent extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                                AppLocalizations.of(_appController.context!)!
+                                AppLocalizations.of(
+                                        _appController.buildContext!)!
                                     .seguroDeVidaPraMim,
                                 style: Theme.of(context)
                                     .textTheme
@@ -126,7 +129,8 @@ class ConhecerContent extends StatelessWidget {
                               height: 24.0,
                             ),
                             Text(
-                                AppLocalizations.of(_appController.context!)!
+                                AppLocalizations.of(
+                                        _appController.buildContext!)!
                                     .loremIpsum3,
                                 style: Theme.of(context)
                                     .textTheme
@@ -143,9 +147,9 @@ class ConhecerContent extends StatelessWidget {
                 ),
               ),
               GenericButton(
-                  text: AppLocalizations.of(_appController.context!)!
+                  text: AppLocalizations.of(_appController.buildContext!)!
                       .btnSimularSeguro,
-                  onPressed: () => Navigator.push(_appController.context!,
+                  onPressed: () => Navigator.push(_appController.buildContext!,
                           CupertinoPageRoute(builder: (context) {
                         return AtividadesPage();
                       })))

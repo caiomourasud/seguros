@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:seguros/app/components/atividades_modal_bottom_sheet.dart';
@@ -100,7 +99,7 @@ class _AtividadesPageState extends State<AtividadesPage> {
                           size: 28),
                       onPressed: atividadeId == 0
                           ? null
-                          : () => Navigator.push(_appController.context!,
+                          : () => Navigator.push(_appController.buildContext!,
                                   CupertinoPageRoute(builder: (context) {
                                 return CoberturaPage(
                                     atividade: getById(atividadeId));

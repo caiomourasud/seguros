@@ -61,7 +61,7 @@ class _CarregandoPageState extends State<CarregandoPage> {
       },
       child: Scaffold(
         appBar: AppBar(
-          brightness: Theme.of(context).brightness,
+          // brightness: Theme.of(context).brightness,
           automaticallyImplyLeading: false,
           elevation: 0.0,
           backgroundColor: Colors.transparent,

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:seguros/app/components/bottom_sheets/generic_button.dart';
 import 'package:seguros/app/components/cached_image_widget.dart';
@@ -54,18 +54,18 @@ class _HomePageState extends State<HomePage> {
           Scaffold(
               appBar: AppBar(
                 toolbarHeight: 0.0,
-                brightness:
+                systemOverlayStyle:
                     _scrollPosition < (_imageHeight - _systemPeddingBottom)
-                        ? Brightness.dark
-                        : Brightness.light,
+                        ? SystemUiOverlayStyle.light
+                        : SystemUiOverlayStyle.dark,
                 backgroundColor: Colors.transparent,
                 elevation: 0.0,
               ),
               extendBodyBehindAppBar: true,
               bottomSheet: GenericButton(
-                  text: AppLocalizations.of(_appController.context!)!
+                  text: AppLocalizations.of(_appController.buildContext!)!
                       .btnSimularSeguro,
-                  onPressed: () => Navigator.push(_appController.context!,
+                  onPressed: () => Navigator.push(_appController.buildContext!,
                           CupertinoPageRoute(builder: (context) {
                         return AtividadesPage();
                       }))),
@@ -160,7 +160,8 @@ class _HomePageState extends State<HomePage> {
                                             ?.copyWith(
                                                 fontSize: 16,
                                                 color: Theme.of(context)
-                                                    .accentColor)),
+                                                    .colorScheme
+                                                    .secondary)),
                                     SizedBox(width: 8.0),
                                     Icon(Icons.arrow_forward_rounded, size: 22),
                                   ],
