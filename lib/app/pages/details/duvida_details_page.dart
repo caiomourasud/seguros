@@ -23,7 +23,13 @@ class DuvidaDetailsPage extends StatelessWidget {
           Column(
             children: [
               Container(
-                color: Colors.transparent,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topLeft: const Radius.circular(10.0),
+                    topRight: const Radius.circular(10.0),
+                  ),
+                  color: Colors.white,
+                ),
                 height: 68.0,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
