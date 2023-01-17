@@ -13,21 +13,21 @@
 
 Changing the color of the statusbar when the image ends
 <p>
-  <img src="screens/home.gif" height="300" alt="Home screen">
+  <img src="screens/home.gif" height="280" width="280" alt="Home screen">
 </p>
 </br>
 
 Creating a pattern for navigation between modals
 <p>
-  <img src="screens/modal_navigation.gif" height="300" alt="Home screen using modals">
+  <img src="screens/modal_navigation.gif" height="280" width="280" alt="Home screen using modals">
 </p>
 </br>
 
 Creating patterns in the use of shadows
 <p>
-  <img src="screens/atividades.gif" height="300" alt="Atividades page">
-  <img src="screens/forma_pagamento.gif" height="300" alt="Forma pagamentos page">
-  <img src="screens/contratar.gif" height="300" alt="Contratar page">
+  <img src="screens/atividades.gif" height="280" width="280" alt="Atividades page">
+  <img src="screens/forma_pagamento.gif" height="280" width="280" alt="Forma pagamentos page">
+  <img src="screens/contratar.gif" height="280" width="280" alt="Contratar page">
 </p>
 </br>
 
