@@ -37,7 +37,7 @@ flutter:
 
   assets:
     - assets/json/atividades.json
-    - assets/images/contratado.jpg
+    - assets/images/
 
   uses-material-design: true
   generate: true

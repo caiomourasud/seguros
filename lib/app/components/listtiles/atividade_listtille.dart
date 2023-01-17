@@ -24,6 +24,7 @@ class AtividadeListTile extends StatelessWidget {
           leading: Transform.scale(
               scale: 1.5,
               child: Radio<int>(
+                  activeColor: Theme.of(context).colorScheme.primary,
                   value: value,
                   groupValue: groupValue,
                   onChanged: (int? value) {

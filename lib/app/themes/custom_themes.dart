@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class CustomThemes {
   final colorScheme = ColorScheme(
     brightness: Brightness.light,
-    primary: Colors.blue,
+    primary: Colors.purple.shade800,
     onPrimary: Colors.white,
     secondary: Colors.purple.shade800,
     onSecondary: Colors.white,

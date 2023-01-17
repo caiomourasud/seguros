@@ -81,9 +81,10 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         Container(
                           constraints: BoxConstraints(minHeight: _imageHeight),
-                          child: CachedImageWidget(
-                              url:
-                                  'https://blog.nubank.com.br/wp-content/uploads/2020/11/4_header.png'),
+                          child: Image(
+                            fit: BoxFit.cover,
+                            image: AssetImage('assets/images/4_header.png'),
+                          ),
                         ),
                         Padding(
                           padding: EdgeInsets.only(

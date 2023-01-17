@@ -24,6 +24,7 @@ class CustomCheckBoxListTitle extends StatelessWidget {
         leading: Transform.scale(
           scale: 1.6,
           child: Checkbox(
+            activeColor: Theme.of(context).colorScheme.primary,
             value: value,
             onChanged: (value) {
               onChange();
